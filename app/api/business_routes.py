@@ -24,20 +24,19 @@ def business(id):
 def post_business():
     form = BusinessForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        business = Business(
-            userId=form.data['userid'],
-            name=form.data['name'],
-            address=form.data['address'],
-            city=form.data['city'],
-            state=form.data['state'],
-            phone_number=form.data['phone_number'],
-            website=form.data['website']
-        )
-        db.session.add(business)
-        db.session.commit()
-        return business.to_dict()
-    return {'errors'}
+    business = Business(
+        userId=form.data['userId'],
+        name=form.data['name'],
+        address=form.data['address'],
+        city=form.data['city'],
+        state=form.data['state'],
+        phone_number=form.data['phone_number'],
+        website=form.data['website']
+    )
+    db.session.add(business)
+    db.session.commit()
+    return business.to_dict()
+    # return {'errors'}
 
 @business_routes.route('/<int:id>', methods=['PUT'])
 @login_required
