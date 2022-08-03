@@ -30,18 +30,18 @@ export const getAllBusinessThunk = () => async(dispatch) => {
     return data.businesses
 }
 
-export const createPostThunk = (createdBusiness) => async(dispatch) => {
+export const createBusinessThunk = (business) => async(dispatch) => {
     const response = await fetch('/api/business/create', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(createdBusiness),
+      body: JSON.stringify(business),
     });
     if (response.ok) {
-      const createdPost = await response.json();
-      dispatch(createBusiness(createdPost));
-      return createdPost;
+      const business = await response.json();
+      dispatch(createBusiness(business));
+      return business;
     }
   };
 
