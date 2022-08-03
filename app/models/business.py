@@ -17,8 +17,8 @@ class Business(db.Model):
     website = db.Column(db.String(80), nullable=False)
 
     userIds = db.relationship("User", back_populates="business")
-    reviews = db.relationship("Review", back_populates="business")
-    images = db.relationship("Image", back_populates="businessIds")
+    reviews = db.relationship("Review", back_populates="business", cascade="all, delete")
+    images = db.relationship("Image", back_populates="businessIds", cascade="all, delete")
 
     def to_dict(self):
         return {
