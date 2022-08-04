@@ -35,7 +35,7 @@ function BusinessPage() {
                     {businesses.map((business) =>{
                         return(
                         <>
-                            <h2> {business.name} </h2>
+                            <NavLink to={`/business/${business.id}`}> <h1>{business.name} </h1></NavLink>
                             <h2> {business.address} </h2>
                             <h2> {business.city} </h2>
                             <h2> {business.state} </h2>
