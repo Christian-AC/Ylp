@@ -43,7 +43,32 @@ export const createBusinessThunk = (business) => async(dispatch) => {
       dispatch(createBusiness(business));
       return business;
     }
-  };
+};
+
+export const deleteBusinessThunk = (id) => async(dispatch) => {
+    const response = await fetch(`/api/business/${id}`, {
+      method: "DELETE",
+    })
+    if (response.ok) {
+      const data = await response.json()
+      dispatch(deleteBusiness(data))
+    }
+  }
+
+export const updateBusinessThunk = (business, id) => async(dispatch) => {
+const response = await fetch(`/api/business/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(business),
+    });
+    if (response.ok) {
+    const post = await response.json();
+    dispatch(updateBusiness(business));
+    return business;
+    }
+}
 
 
 const initialState = {};
@@ -64,6 +89,11 @@ export const businessReducer = (state = initialState, action) => {
                 };
             }
             return newState;
+        case UPDATE_BUSINESS:
+            newState = {...state, [action.business.id]: action.business}
+        case DELETE_BUSINESS:
+            delete newState[action.business.id]
+            return newState
         default:
             return state
     }
