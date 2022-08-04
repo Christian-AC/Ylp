@@ -2,10 +2,16 @@ const GET_ALL_BUSINESSES = 'business/GET_ALL_BUSINESSES'
 const CREATE_BUSINESS = 'business/CREATE_BUSINESS'
 const DELETE_BUSINESS = 'business/DELETE_BUSINESS'
 const UPDATE_BUSINESS = 'business/UPDATE_BUSINESS'
+const GET_A_BUSINESS = 'business/GET_A_BUSINESS'
 
 const getAllBusiness = (businesses) => ({
     type: GET_ALL_BUSINESSES,
     businesses
+})
+
+const getABusiness = (business) => ({
+    type: GET_A_BUSINESS,
+    business
 })
 
 const createBusiness = (business) => ({
@@ -30,8 +36,14 @@ export const getAllBusinessThunk = () => async(dispatch) => {
     return data.businesses
 }
 
+export const getABusinessThunk = (id) => async (dispatch) => {
+    const response = await fetch(`/api/business/${id}`)
+    const data = await response.json();
+    dispatch(getAllBusiness(data.business))
+}
+
 export const createBusinessThunk = (business) => async(dispatch) => {
-    const response = await fetch('/api/business/create', {
+    const response = await fetch(`/api/business/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,13 +86,18 @@ const response = await fetch(`/api/business/${id}`, {
 const initialState = {};
 
 export const businessReducer = (state = initialState, action) => {
-    let newState = {...state};
+    let newState = JSON.parse(JSON.stringify(state));
+
     switch (action.type) {
         case GET_ALL_BUSINESSES:
             action.businesses.forEach((business) => {
                 return newState[business.id] = business;
             })
             return newState
+        case GET_A_BUSINESS:
+            action.business.forEach((business) => {
+                return newState[business.id] = business;
+            })
         case CREATE_BUSINESS:
             if (!state[action.business.id]) {
                 newState = {

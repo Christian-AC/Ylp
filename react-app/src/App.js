@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import BusinessPage from './components/businessPage';
 import CreateBusiness from './components/createBusiness';
 import { getAllBusinessThunk } from './store/business';
+import BusinessList from './components/businessList'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -19,6 +20,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getAllBusinessThunk())
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -40,8 +42,11 @@ function App() {
         <Route path='/business/create' exact={true}>
           <CreateBusiness/>
         </Route>
-        <Route path='/business'>
+        <Route path='/business/:id'>
           <BusinessPage/>
+        </Route>
+        <Route path='/business'>
+          <BusinessList/>
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
