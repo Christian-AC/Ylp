@@ -42,7 +42,8 @@ function EditBusiness ({business}) {
         // console.log(createdBusiness)
         dispatch(updateBusinessThunk(updateBusiness, business.id))
         dispatch(getAllBusinessThunk())
-        history.push(`/business/${business.id}`)
+        alert("Business Updated")
+        history.push(`/business`)
 
     }
     const handleDeleteClick = async(e) => {
@@ -50,7 +51,6 @@ function EditBusiness ({business}) {
         await dispatch(deleteBusinessThunk(business.id));
         dispatch(getAllBusinessThunk())
         alert("Business Deleted successfully")
-        // history.push('/')
     }
 
 

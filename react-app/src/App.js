@@ -40,6 +40,9 @@ function App() {
         <Route path='/business/create' exact={true}>
           <CreateBusiness/>
         </Route>
+        <Route path='/business/:id'>
+          <UsersList/>
+        </Route>
         <Route path='/business'>
           <BusinessPage/>
         </Route>
