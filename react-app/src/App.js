@@ -10,6 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import BusinessPage from './components/businessPage';
 import CreateBusiness from './components/createBusiness';
+import { getAllBusinessThunk } from './store/business';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
