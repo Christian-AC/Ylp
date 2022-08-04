@@ -1,7 +1,7 @@
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { updateBusinessThunk } from "../../store/business";
+import { getAllBusinessThunk, updateBusinessThunk, deleteBusinessThunk } from "../../store/business";
 
 
 function EditBusiness ({business}) {
@@ -41,13 +41,23 @@ function EditBusiness ({business}) {
         }
         // console.log(createdBusiness)
         dispatch(updateBusinessThunk(updateBusiness, business.id))
+        dispatch(getAllBusinessThunk())
         history.push(`/business/${business.id}`)
 
     }
-    
+    const handleDeleteClick = async(e) => {
+        e.preventDefault()
+        await dispatch(deleteBusinessThunk(business.id));
+        dispatch(getAllBusinessThunk())
+        alert("Business Deleted successfully")
+        // history.push('/')
+    }
+
+
 
     return (
         <>
+        <button onClick={(e)=>handleDeleteClick(e)}>Delete</button>
         <form className='business-form' onSubmit={handleSubmit}>
             <h2>Edit your business!</h2>
             <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
