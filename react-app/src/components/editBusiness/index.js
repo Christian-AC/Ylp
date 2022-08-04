@@ -11,8 +11,6 @@ function EditBusiness ({business}) {
     const user = useSelector(state => state.session.user)
     // console.log(name)
 
-
-
     const [userId] = useState((user.id));
     const [name, setName] = useState(business.name);
     const [address, setAddress] = useState(business.address);
@@ -40,16 +38,18 @@ function EditBusiness ({business}) {
             website,
         }
         // console.log(createdBusiness)
-        dispatch(updateBusinessThunk(updateBusiness, business.id))
-        dispatch(getAllBusinessThunk())
+
+        await dispatch(updateBusinessThunk(updateBusiness, business.id))
+        await dispatch(getAllBusinessThunk())
         alert("Business Updated")
-        history.push(`/business`)
+        // history.push(`/business/${business.id}`)
+
 
     }
     const handleDeleteClick = async(e) => {
         e.preventDefault()
         await dispatch(deleteBusinessThunk(business.id));
-        dispatch(getAllBusinessThunk())
+        await dispatch(getAllBusinessThunk())
         alert("Business Deleted successfully")
     }
 
