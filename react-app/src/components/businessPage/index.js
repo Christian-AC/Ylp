@@ -23,7 +23,7 @@ function BusinessPage() {
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
     // console.log(businesses)
     // console.log(user)
-    console.log("----------------------------",business)
+    // console.log("----------------------------",business)
 
 
 

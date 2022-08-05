@@ -31,9 +31,9 @@ const updateBusiness = (business) => ({
 
 export const getAllBusinessThunk = () => async(dispatch) => {
     const response = await fetch('/api/business')
-    const data = await response.json();
-    dispatch(getAllBusiness(data.businesses))
-    return data.businesses
+    const businesses = await response.json();
+    dispatch(getAllBusiness(businesses))
+    return businesses
 }
 
 export const getABusinessThunk = (id) => async (dispatch) => {
@@ -90,8 +90,9 @@ export const businessReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case GET_ALL_BUSINESSES:
-            action.businesses.forEach((business) => {
-                return newState[business.id] = business;
+            const businesses = action.businesses["businesses"]
+            businesses.forEach((business) => {
+                newState[business.id] = business;
             })
             return newState
         case GET_A_BUSINESS:

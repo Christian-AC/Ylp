@@ -43,14 +43,14 @@ function EditBusiness ({business}) {
         await dispatch(getAllBusinessThunk())
         alert("Business Updated")
         // history.push(`/business/${business.id}`)
-
-
     }
-    const handleDeleteClick = async(e) => {
+    const handleDeleteClick = (e) => {
         e.preventDefault()
-        await dispatch(deleteBusinessThunk(business.id));
-        await dispatch(getAllBusinessThunk())
-        alert("Business Deleted successfully")
+        let deletedBusiness=  dispatch(deleteBusinessThunk(business.id));
+            if(deletedBusiness) {
+                alert("Business Deleted successfully")
+                history.push(`/business`)
+            }
     }
 
 

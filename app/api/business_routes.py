@@ -7,17 +7,16 @@ business_routes = Blueprint('business', __name__)
 
 
 @business_routes.route('')
-@login_required
 def businesses():
     businesses = Business.query.all()
     return {'businesses': [business.to_dict() for business in businesses]}
 
 
-@business_routes.route('/<int:id>')
-@login_required
-def business(id):
-    business = Business.query.get(id)
-    return business.to_dict()
+# @business_routes.route('/<int:id>')
+# @login_required
+# def business(id):
+#     business = Business.query.get(id)
+#     return business.to_dict()
 
 @business_routes.route('/create', methods=['POST'])
 @login_required
