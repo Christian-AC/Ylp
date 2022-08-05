@@ -31,24 +31,6 @@ function CreateBusiness() {
         e.preventDefault();
         // console.log("Trying to submit business")
 
-        const createdBusiness = {
-            userId,
-            name,
-            address,
-            city,
-            state,
-            phone_number,
-            website,
-        }
-        // console.log(createdBusiness)
-        let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
-            if(newBusiness) {
-                // console.log("-----------",newBusiness)
-                history.push(`/business/${newBusiness.id}`)
-            }
-    }
-
-    useEffect(() => {
         const errors = [];
 
         if (name.length > 40)
@@ -68,18 +50,33 @@ function CreateBusiness() {
         if (website.length > 52) errors.push("Website URL too long");
 
         setValidationErrors(errors);
-      }, []);
+
+        const createdBusiness = {
+            userId,
+            name,
+            address,
+            city,
+            state,
+            phone_number,
+            website,
+        }
+        // console.log(createdBusiness)
+        let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
+            if(newBusiness) {
+                // console.log("-----------",newBusiness)
+                history.push(`/business/${newBusiness.id}`)
+            }
+    }
 
       let requirements;
 
       if (validationErrors.length) {
-        // requirements = (
-        //         validationErrors.map(error =>{
-        //             return(
-
-        //                 <h2>{error}</h2>
-        //             )
-        //         }))
+        requirements = (
+                validationErrors.map(error =>{
+                    return(
+                        <h3>{error}</h3>
+                    )
+                }))
       } else {
         requirements = <></>;
       }

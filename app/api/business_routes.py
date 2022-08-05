@@ -51,16 +51,20 @@ def post_business():
 @business_routes.route('/<int:id>', methods=['PUT'])
 @login_required
 def put_business(id):
-    business = Business.query.get(id)
-    data = request.json
-    business.name=data['name'],
-    business.address=data['address'],
-    business.city=data['city'],
-    business.state=data['state'],
-    business.phone_number=data['phone_number'],
-    business.website=data['website']
-    db.session.commit()
-    return business.to_dict()
+    form = BusinessForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        business = Business.query.get(id)
+        data = request.json
+        business.name=data['name'],
+        business.address=data['address'],
+        business.city=data['city'],
+        business.state=data['state'],
+        business.phone_number=data['phone_number'],
+        business.website=data['website']
+        db.session.commit()
+        return business.to_dict()
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
 
 @business_routes.route('/<int:id>', methods=['DELETE'])
 @login_required

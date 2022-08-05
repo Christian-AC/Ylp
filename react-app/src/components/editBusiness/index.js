@@ -19,6 +19,8 @@ function EditBusiness ({business}) {
     const [phone_number, setPhoneNumber] = useState(business.phone_number);
     const [website, setWebsite] = useState(business.website);
 
+    const [validationErrors, setValidationErrors] = useState([]);
+
     const updateName = (e) => setName(e.target.value)
     const updateAddress = (e) => setAddress(e.target.value)
     const updateCity = (e) => setCity(e.target.value)
@@ -28,6 +30,27 @@ function EditBusiness ({business}) {
     // console.log(name)
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const errors = [];
+
+        if (name.length > 40)
+          errors.push("Business name too long (40 characters or less)");
+
+        if (address.length === 0) errors.push("Address can't be empty");
+
+        if (city.length > 25)
+          errors.push("City name too long (25 characters or less)");
+
+        if (phone_number.length !== 10)
+          errors.push("Phone number must be 10 digits");
+
+        if (!website.includes("http://") && !website.includes("https://"))
+          errors.push("Website must include http:// or https://");
+
+        if (website.length > 52) errors.push("Website URL too long");
+
+        setValidationErrors(errors);
+
         const updateBusiness = {
             userId,
             name,
@@ -51,6 +74,19 @@ function EditBusiness ({business}) {
         history.push(`/business`)
 
     }
+    
+    let requirements;
+
+      if (validationErrors.length) {
+        requirements = (
+                validationErrors.map(error =>{
+                    return(
+                        <h3>{error}</h3>
+                    )
+                }))
+      } else {
+        requirements = <></>;
+      }
 
 
 
@@ -59,6 +95,7 @@ function EditBusiness ({business}) {
         <button onClick={(e)=>handleDeleteClick(e)}>Delete</button>
         <form className='business-form' onSubmit={handleSubmit}>
             <h2>Edit your business!</h2>
+            {requirements}
             <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
             <input type='text' value={address} placeholder='address' onChange={updateAddress}/>
             <input type='text' value={city} placeholder='city' onChange={updateCity}/>

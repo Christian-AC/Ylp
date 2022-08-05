@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Length
 
 # states = [
 #  'AL','AK','AS','AZ','AR','CA','CO','CT','DE','DC','FM','FL','GA',
@@ -10,16 +10,15 @@ from wtforms.validators import DataRequired, ValidationError
 #  'VT','VI','VA','WA','WV','WI','WY'
 # ]
 
-# def valid_website(form, field):
-#     web = field.data
-#     if "http" not in web or "." not in web:
-#         raise ValidationError("Please sender a valid website.")
+def valid_website(form, field):
+    web = field.data
+    if "http" not in web or "." not in web:
+        raise ValidationError("Please sender a valid website.")
 
 # def valid_state(form, field):
 #     state = field.data
 #     if len(state) != 2 or state not in states:
 #         raise ValidationError("Please enter a Valid state using abrivations")
-
 
 
 
@@ -30,5 +29,5 @@ class BusinessForm(FlaskForm):
     address = StringField('address', validators=[DataRequired()])
     city = StringField('city', validators=[DataRequired()])
     state = StringField('state', validators=[DataRequired()])
-    phone_number = StringField('phone_number', validators=[DataRequired()])
-    website = StringField('website', validators=[DataRequired()])
+    phone_number = StringField('phone_number', validators=[DataRequired(), Length(min=9,max=9,message=None)])
+    website = StringField('website', validators=[DataRequired(), valid_website])
