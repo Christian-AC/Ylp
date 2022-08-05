@@ -5,6 +5,16 @@ from app.forms.business_form import BusinessForm
 
 business_routes = Blueprint('business', __name__)
 
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{field} : {error}')
+    return errorMessages
+
 
 @business_routes.route('')
 def businesses():
@@ -23,19 +33,20 @@ def businesses():
 def post_business():
     form = BusinessForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    business = Business(
-        userId=form.data['userId'],
-        name=form.data['name'],
-        address=form.data['address'],
-        city=form.data['city'],
-        state=form.data['state'],
-        phone_number=form.data['phone_number'],
-        website=form.data['website']
-    )
-    db.session.add(business)
-    db.session.commit()
-    return business.to_dict()
-    # return {'errors'}
+    if form.validate_on_submit():
+        business = Business(
+            userId=form.data['userId'],
+            name=form.data['name'],
+            address=form.data['address'],
+            city=form.data['city'],
+            state=form.data['state'],
+            phone_number=form.data['phone_number'],
+            website=form.data['website']
+        )
+        db.session.add(business)
+        db.session.commit()
+        return business.to_dict()
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
 
 @business_routes.route('/<int:id>', methods=['PUT'])
 @login_required

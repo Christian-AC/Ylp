@@ -4,6 +4,7 @@ import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
 import EditBusiness from '../editBusiness/index'
 import BusinessReviews from "../businessReviews";
+import CreateReview from "../createReview";
 
 import './businessPage.css';
 
@@ -51,6 +52,9 @@ function BusinessPage() {
                             <h2> {business.website} </h2>
                             <div>
                                 <EditBusiness business={business}/>
+                            </div>
+                            <div>
+                                <CreateReview business={business}/>
                             </div>
                             <div>
                                 <BusinessReviews business={business}/>

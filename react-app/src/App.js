@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      dispatch(getAllBusinessThunk())
+      await dispatch(getAllBusinessThunk())
       setLoaded(true);
     })();
   }, [dispatch]);

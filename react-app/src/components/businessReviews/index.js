@@ -28,7 +28,7 @@ function BusinessReviews({business}) {
                 <>
                 <h3>{review.content}</h3>
                 <h3>Rating: {review.rating}</h3>
-                <Editreview review={review}/>
+                <Editreview business={business} review={review}/>
                 </>
             )
         })}
