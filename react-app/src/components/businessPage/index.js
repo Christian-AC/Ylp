@@ -17,31 +17,19 @@ function BusinessPage() {
     const num = Number(url[url.length - 1]);
     // console.log("-----------", id)
 
-
-
     const user = useSelector((state) => state.session.user)
     const businesses = useSelector((state) => Object.values(state.business))
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
-    // console.log(businesses)
-    // console.log(user)
-    // console.log("----------------------------",business)
-
-
 
     useEffect(() => {
         dispatch(getAllBusinessThunk())
     }, [dispatch])
-
-
-
 
     return (
         <>
             <div >
                 <h1>Business</h1>
                     <>
-                    {/* {businesses.map((business) =>{
-                        return( */}
                         <>
                         <div class="business-container">
                             <h2> {business.name} </h2>
@@ -61,8 +49,6 @@ function BusinessPage() {
                             </div>
                             </div>
                         </>
-                        {/* )
-                    })} */}
                     </>
             </div>
         </>
