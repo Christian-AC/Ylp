@@ -20,8 +20,8 @@ def valid_website(form, field):
 class BusinessForm(FlaskForm):
     userId = IntegerField('userId', validators=[DataRequired()])
     name = StringField('name', validators=[DataRequired(message="Name is required"), Length(min=4, max=20, message="Name must be between 4 and 20 characters" )])
-    address = StringField('address', validators=[DataRequired(), Length(min=4, max=25,message="Address must be between 4 and 25 characters" )])
-    city = StringField('city', validators=[DataRequired()])
-    state = StringField('state', validators=[DataRequired()])
+    address = StringField('address', validators=[DataRequired(message="Address is required"), Length(min=4, max=25,message="Address must be between 4 and 25 characters" )])
+    city = StringField('city', validators=[DataRequired(message="City is required")])
+    state = StringField('state', validators=[DataRequired(message="State is required")])
     phone_number = StringField('phone_number', validators=[DataRequired(),Length(min=10, max=10,message="Jack Sucks" )])
-    website = StringField('website', validators=[DataRequired(), valid_website])
+    website = StringField('website', validators=[DataRequired(message="Website is required"), valid_website])
