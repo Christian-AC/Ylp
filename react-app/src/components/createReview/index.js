@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { createReviewThunk, getReviewsThunk} from '../../store/review'
+import { createReviewThunk, getReviewsThunk} from '../../store/review';
 
 
 function CreateReview({business}) {
@@ -29,7 +29,7 @@ function CreateReview({business}) {
         }
 
         await dispatch(createReviewThunk(createdReview));
-        await dispatch(getReviewsThunk(businessId))
+        // await dispatch(getReviewsThunk(businessId))
         alert('Review Created')
 
     }

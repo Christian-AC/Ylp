@@ -11,23 +11,17 @@ from wtforms.validators import DataRequired, ValidationError, Length
 # ]
 
 def valid_website(form, field):
-    web = field.data
-    if "http" not in web or "." not in web:
-        raise ValidationError("Please sender a valid website.")
-
-# def valid_state(form, field):
-#     state = field.data
-#     if len(state) != 2 or state not in states:
-#         raise ValidationError("Please enter a Valid state using abrivations")
-
+    website = field.data
+    if "http" not in website or "." not in website:
+        raise ValidationError("Please send a valid website.")
 
 
 
 class BusinessForm(FlaskForm):
     userId = IntegerField('userId', validators=[DataRequired()])
-    name = StringField('name', validators=[DataRequired()])
-    address = StringField('address', validators=[DataRequired()])
+    name = StringField('name', validators=[DataRequired(), Length(min=4, max=20, message="Name must be between 4 and 20 characters" )])
+    address = StringField('address', validators=[DataRequired(), Length(min=4, max=25,message="Address must be between 4 and 25 characters" )])
     city = StringField('city', validators=[DataRequired()])
     state = StringField('state', validators=[DataRequired()])
-    phone_number = StringField('phone_number', validators=[DataRequired(), Length(min=9,max=9,message=None)])
+    phone_number = StringField('phone_number', validators=[DataRequired(),Length(min=9, max=9,message="Phone number must be 9 digits long" )])
     website = StringField('website', validators=[DataRequired(), valid_website])

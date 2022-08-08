@@ -11,14 +11,13 @@ function CreateBusiness() {
     const user = useSelector(state => state.session.user)
 
     const [userId] = useState((user.id));
+    const [errors, setErrors] = useState([]);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [phone_number, setPhoneNumber] = useState("");
     const [website, setWebsite] = useState("");
-
-    const [validationErrors, setValidationErrors] = useState([]);
 
     const updateName = (e) => setName(e.target.value)
     const updateAddress = (e) => setAddress(e.target.value)
@@ -28,72 +27,41 @@ function CreateBusiness() {
     const updateWebsite = (e) => setWebsite(e.target.value)
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        // console.log("Trying to submit business")
-
-        const errors = [];
-
-        if (name.length > 40)
-          errors.push("Business name too long (40 characters or less)");
-
-        if (address.length === 0) errors.push("Address can't be empty");
-
-        if (city.length > 25)
-          errors.push("City name too long (25 characters or less)");
-
-        if (phone_number.length !== 10)
-          errors.push("Phone number must be 10 digits");
-
-        if (!website.includes("http://") && !website.includes("https://"))
-          errors.push("Website must include http:// or https://");
-
-        if (website.length > 52) errors.push("Website URL too long");
-
-        setValidationErrors(errors);
-
-        const createdBusiness = {
-            userId,
-            name,
-            address,
-            city,
-            state,
-            phone_number,
-            website,
-        }
-        // console.log(createdBusiness)
-        let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
-            if(newBusiness) {
-                // console.log("-----------",newBusiness)
-                history.push(`/business/${newBusiness.id}`)
-            }
-    }
-
-      let requirements;
-
-      if (validationErrors.length) {
-        requirements = (
-                validationErrors.map(error =>{
-                    return(
-                        <h3>{error}</h3>
-                    )
-                }))
-      } else {
-        requirements = <></>;
+      e.preventDefault();
+      const createdBusiness = {
+          userId,
+          name,
+          address,
+          city,
+          state,
+          phone_number,
+          website,
       }
+      // console.log(createdBusiness)
+      const newBusiness = await dispatch(createBusinessThunk(createdBusiness))
+          if(newBusiness) {
+              setErrors(newBusiness)
+          }
+          console.log(errors)
+    }
 
       return (<>
       <div>
       </div>
             <h2>Add your business!</h2>
-            {requirements}
         <form className='business-form' onSubmit={handleSubmit}>
+            <div>
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
+            </div>
             <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
             <input type='text' value={address} placeholder='address' onChange={updateAddress}/>
             <input type='text' value={city} placeholder='city' onChange={updateCity}/>
             <input type='text' value={state} placeholder='state' onChange={updateState}/>
             <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber}/>
             <input type='text' value={website} placeholder='website' onChange={updateWebsite}/>
-            <button className="button" type="submit" onclick={handleSubmit}>Post</button>
+            <button className="button" type="submit">Post</button>
         </form>
       </>
 

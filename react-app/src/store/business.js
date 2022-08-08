@@ -53,7 +53,14 @@ export const createBusinessThunk = (business) => async(dispatch) => {
     if (response.ok) {
       const business = await response.json();
       dispatch(createBusiness(business));
-      return business;
+      return null;
+    } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 
@@ -76,10 +83,17 @@ const response = await fetch(`/api/business/${id}`, {
     body: JSON.stringify(business),
     });
     if (response.ok) {
-    const post = await response.json();
-    dispatch(updateBusiness(business));
-    return business;
+        const post = await response.json();
+        dispatch(updateBusiness(business));
+        return null;
+    } else if (response.status < 500) {
+        const data = await response.json();
+    if (data.errors) {
+      return data.errors;
     }
+    } else {
+    return ['An error occurred. Please try again.']
+  }
 }
 
 

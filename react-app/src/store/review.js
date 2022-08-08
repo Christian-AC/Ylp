@@ -41,7 +41,14 @@ export const createReviewThunk = (review) => async (dispatch) => {
     if(response.ok) {
         const business = await response.json();
         dispatch(createReview(review));
-        return business;
+        return null;
+    } else if (response.status < 500) {
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
+    } else {
+      return ['An error occurred. Please try again.']
     }
 }
 
@@ -66,7 +73,14 @@ export const updateReviewThunk = (review, id) => async(dispatch) => {
     if(response.ok){
         const data = await response.json()
         dispatch(updateReview(data));
-        return review
+        return null;
+    } else if (response.status < 500) {
+        const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 }
 

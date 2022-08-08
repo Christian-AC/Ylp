@@ -46,7 +46,7 @@ def post_business():
         db.session.add(business)
         db.session.commit()
         return business.to_dict()
-    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @business_routes.route('/<int:id>', methods=['PUT'])
 @login_required
@@ -64,7 +64,7 @@ def put_business(id):
         business.website=data['website']
         db.session.commit()
         return business.to_dict()
-    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @business_routes.route('/<int:id>', methods=['DELETE'])
 @login_required

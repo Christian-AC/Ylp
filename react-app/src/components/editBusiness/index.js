@@ -74,7 +74,7 @@ function EditBusiness ({business}) {
         history.push(`/business`)
 
     }
-    
+
     let requirements;
 
       if (validationErrors.length) {
@@ -96,10 +96,10 @@ function EditBusiness ({business}) {
         <form className='business-form' onSubmit={handleSubmit}>
             <h2>Edit your business!</h2>
             {requirements}
-            <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
-            <input type='text' value={address} placeholder='address' onChange={updateAddress}/>
-            <input type='text' value={city} placeholder='city' onChange={updateCity}/>
-            <input type='text' value={state} placeholder='state' onChange={updateState}/>
+            <input type='text' value={name} placeholder='Business name' onChange={updateName} required/>
+            <input type='text' value={address} placeholder='address' onChange={updateAddress} required/>
+            <input type='text' value={city} placeholder='city' onChange={updateCity} required/>
+            <input type='text' value={state} placeholder='state' onChange={updateState} required/>
             <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber}/>
             <input type='text' value={website} placeholder='website' onChange={updateWebsite}/>
             <button className="button" type="submit">Post</button>
