@@ -33,17 +33,18 @@ function CreateReview({business}) {
             if(newReview) {
                 setErrors(newReview)
             }
+        await dispatch(getReviewsThunk(business.id))
     }
 
     return (
         <>
         <h1>Add a reivew</h1>
         <form className="review-form" onSubmit={handleSubmit}>
-            <div>
+            {/* <div>
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
               ))}
-            </div>
+            </div> */}
             <textarea type='textarea' value={content} placeHolder="content" onChange={updateContent}/>
             <input type='text' value={rating} onChange={updateRating}/>
             <button className="button" type="submit">Submit</button>

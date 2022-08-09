@@ -16,8 +16,8 @@ function BusinessReviews({business}) {
     const reviews = useSelector((state) => Object.values(state.review).filter(review => review.businessId === businessId))
 
 
-    useEffect(() => {
-        dispatch(getReviewsThunk(business.id))
+    useEffect(async () => {
+       await dispatch(getReviewsThunk(business.id))
     }, [dispatch])
 
     return (

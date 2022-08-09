@@ -40,8 +40,8 @@ export const createReviewThunk = (review) => async (dispatch) => {
     });
     if(response.ok) {
         const business = await response.json();
-        dispatch(createReview(review));
-        return null;
+        dispatch(createReview(business));
+        return business;
     } else if (response.status < 500) {
       const data = await response.json();
       if (data.errors) {

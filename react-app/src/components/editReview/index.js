@@ -33,7 +33,7 @@ function Editreview ({review, business}) {
 
     const handleDeleteClick = async (e) => {
         e.preventDefault()
-        console.log("---------",review.id)
+        console.log("ReviewId ====",review.id)
         let deleteReview = await dispatch(deleteReviewThunk(review.id));
             if(deleteReview) {
                 await dispatch(getReviewsThunk(business.id))
