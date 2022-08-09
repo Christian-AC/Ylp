@@ -82,13 +82,13 @@ function CreateBusiness() {
       </div>
             <h2>Add your business!</h2>
         <form className='business-form' onSubmit={handleSubmit}>
-          {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
-            <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
-            <input type='text' value={address} placeholder='address' onChange={updateAddress}/>
-            <input type='text' value={city} placeholder='city' onChange={updateCity}/>
-            <input type='text' value={state} placeholder='state' onChange={updateState}/>
-            <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber}/>
-            <input type='text' value={website} placeholder='website' onChange={updateWebsite}/>
+          {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
+            <input type='text' value={name} placeholder='Business name' onChange={updateName} required/>
+            <input type='text' value={address} placeholder='address' onChange={updateAddress} required/>
+            <input type='text' value={city} placeholder='city' onChange={updateCity} required/>
+            <input type='text' value={state} placeholder='state' onChange={updateState} required/>
+            <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber} required/>
+            <input type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
             <button className="button" type="submit">Post</button>
         </form>
       </>
