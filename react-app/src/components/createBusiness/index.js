@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory,Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { createBusinessThunk } from "../../store/business";
 import './createBusiness.css'
@@ -9,6 +9,8 @@ function CreateBusiness() {
     const history = useHistory();
 
     const user = useSelector(state => state.session.user)
+    const business = useSelector(state => state.business)
+    console.log("------",business)
 
     const [userId] = useState((user.id));
     const [errors, setErrors] = useState([]);
@@ -41,8 +43,11 @@ function CreateBusiness() {
       const newBusiness = await dispatch(createBusinessThunk(createdBusiness))
           if(newBusiness) {
               setErrors(newBusiness)
-          }
-          console.log(errors)
+              console.log("-----------", errors)
+            }
+    }
+    if(business) {
+
     }
 
       return (<>

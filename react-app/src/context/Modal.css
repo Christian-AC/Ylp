@@ -1,0 +1,52 @@
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal-content {
+  position: absolute;
+  color: orange;
+  font-size: 20px;
+  background-color:rgb(255, 255, 255);
+  border-radius: 15px 50px 30px 5px;
+
+}
+
+form{
+  background-color:rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px 15px 15px 15px;
+
+}
+input{
+  margin-bottom: 10px;
+}
+
+.create-form{
+  width: 200%;
+}
+
+#login-button {
+  margin-top: 10px;
+  /* border: black solid 1px; */
+  background-color: white;
+  color: orange;
+  border-radius: 15px 15px 15px 15px;
+}

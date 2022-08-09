@@ -2,12 +2,14 @@ import { useDispatch, useSelector} from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllBusinessThunk, updateBusinessThunk, deleteBusinessThunk } from "../../store/business";
+import EditBusinessModal from "./editBusinessModal";
 
 
-function EditBusiness ({business}) {
+function EditBusiness ({business, setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
-
+    // const [showModal, setShowModal] = useState(false);
+    const showModal = EditBusinessModal.showModal
     const user = useSelector(state => state.session.user)
     // console.log(name)
 
@@ -46,6 +48,7 @@ function EditBusiness ({business}) {
         await dispatch(getAllBusinessThunk())
         // alert("Business Updated")
         // history.push(`/business/${business.id}`)
+        setShowModal(false)
     }
     const handleDeleteClick = async (e) => {
         e.preventDefault()
@@ -72,7 +75,6 @@ function EditBusiness ({business}) {
 
     return (
         <>
-        <button onClick={(e)=>handleDeleteClick(e)}>Delete</button>
         <form className='business-form' onSubmit={handleSubmit}>
             <h2>Edit your business!</h2>
             {requirements}
@@ -82,8 +84,9 @@ function EditBusiness ({business}) {
             <input type='text' value={state} placeholder='state' onChange={updateState} required/>
             <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber}/>
             <input type='text' value={website} placeholder='website' onChange={updateWebsite}/>
-            <button className="button" type="submit">Post</button>
+            <button className="button" type="submit" onSubmit={() => showModal(false)}>Post</button>
         </form>
+        <button onClick={(e)=>handleDeleteClick(e)}>Delete</button>
         </>
     )
 }

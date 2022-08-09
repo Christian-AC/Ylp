@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import {FaEdit} from "react-icons/fa"
 import { getAllBusinessThunk } from '../../store/business';
-import EditBusiness from '../editBusiness/index'
+import EditBusinessModal from '../editBusiness/editBusinessModal'
 import BusinessReviews from "../businessReviews";
 import CreateReview from "../createReview";
 
@@ -29,7 +29,7 @@ function BusinessPage() {
 
     useEffect(() => {
         dispatch(getAllBusinessThunk())
-    }, [dispatch])
+    }, [dispatch,num])
 
     return (
         <>
@@ -44,12 +44,10 @@ function BusinessPage() {
                             <h2> {business.state} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
-                            <FaEdit size="22px" className="likebutton"  onClick={(e)=>handleClick(e)}/>
-                            {isShown &&
                             <div>
-                                <EditBusiness business={business}/>
+                                <EditBusinessModal business={business}/>
                             </div>
-                            }
+
                             <div>
                                 <CreateReview business={business}/>
                             </div>
