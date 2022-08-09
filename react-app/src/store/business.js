@@ -53,7 +53,7 @@ export const createBusinessThunk = (business) => async(dispatch) => {
     if (response.ok) {
       const business = await response.json();
       dispatch(createBusiness(business));
-      return null;
+      return business;
     } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {

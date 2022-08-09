@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      // await dispatch(getAllBusinessThunk())
+      await dispatch(getAllBusinessThunk())
       setLoaded(true);
     })();
   }, [dispatch]);

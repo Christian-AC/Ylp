@@ -9,11 +9,12 @@ function CreateBusiness() {
     const history = useHistory();
 
     const user = useSelector(state => state.session.user)
-    const business = useSelector(state => state.business)
-    console.log("------",business)
+    const business = useSelector(state => state.businesses)
+    // console.log("------",business)
+    let errorsObj = {content: ''};
 
     const [userId] = useState((user.id));
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState(errorsObj);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
@@ -28,26 +29,52 @@ function CreateBusiness() {
     const updatePhoneNumber = (e) => setPhoneNumber(e.target.value)
     const updateWebsite = (e) => setWebsite(e.target.value)
 
+
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const createdBusiness = {
-          userId,
-          name,
-          address,
-          city,
-          state,
-          phone_number,
-          website,
-      }
-      // console.log(createdBusiness)
-      const newBusiness = await dispatch(createBusinessThunk(createdBusiness))
-          if(newBusiness) {
-              setErrors(newBusiness)
-              console.log("-----------", errors)
-            }
-    }
-    if(business) {
 
+      let error = false;
+      errorsObj = {...errorsObj};
+      if(name === '') {
+        errorsObj.name = "Name is required";
+        error = true;
+      } else if (name.length < 4 || name.length > 20) {
+        errorsObj.name = "Name must be longer than 4 characters and shorter than 20";
+        error = true;
+      } else if (address.length < 4 || address.length > 25) {
+        errorsObj.address = "Address must be longer than 4 characters and shorter than 25";
+        error = true;
+      } else if (city === '') {
+        errorsObj.city = "City is required"
+        error = true;
+      }else if (state === '') {
+        errorsObj.state = "State is required"
+        error = true;
+      }else if (phone_number === '') {
+        errorsObj.phone_number = "Phone # is required"
+        error = true;
+      }else if (phone_number.length !== 10 ) {
+        errorsObj.phone_number ="Valid 10 digit phone number is required"
+        error = true;
+      }else if(!website.includes('www')) {
+        errorsObj.website = "Please enter a valid website starting with 'www'"
+        error = true;
+      }
+      setErrors(errorsObj);
+
+      if(!error) {
+        const createdBusiness = {
+            userId,
+            name,
+            address,
+            city,
+            state,
+            phone_number,
+            website,
+        }
+        let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
+        history.push(`/business/${newBusiness.id}`)
+      }
     }
 
       return (<>
@@ -55,11 +82,7 @@ function CreateBusiness() {
       </div>
             <h2>Add your business!</h2>
         <form className='business-form' onSubmit={handleSubmit}>
-            <div>
-              {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
-              ))}
-            </div>
+          {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
             <input type='text' value={name} placeholder='Business name' onChange={updateName}/>
             <input type='text' value={address} placeholder='address' onChange={updateAddress}/>
             <input type='text' value={city} placeholder='city' onChange={updateCity}/>
