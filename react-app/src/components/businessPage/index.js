@@ -5,7 +5,7 @@ import {FaEdit} from "react-icons/fa"
 import { getAllBusinessThunk } from '../../store/business';
 import EditBusinessModal from '../editBusiness/editBusinessModal'
 import BusinessReviews from "../businessReviews";
-import CreateReview from "../createReview";
+import CreateReviewModal from "../createReview/CreateReviewModal";
 
 import './businessPage.css';
 
@@ -44,12 +44,15 @@ function BusinessPage() {
                             <h2> {business.state} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
+                            {business.user.id === user.id ? (
+
                             <div>
                                 <EditBusinessModal business={business}/>
                             </div>
+                            ): null }
 
                             <div>
-                                <CreateReview business={business}/>
+                                <CreateReviewModal business={business}/>
                             </div>
                             <div>
                                 <BusinessReviews business={business}/>

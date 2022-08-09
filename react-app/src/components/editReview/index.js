@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getReviewsThunk, deleteReviewThunk, updateReviewThunk } from "../../store/review"
 
 
-function Editreview ({review, business}) {
+function Editreview ({review, business, setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -28,7 +28,7 @@ function Editreview ({review, business}) {
         }
         await dispatch(updateReviewThunk(updateReview, review.id))
         await dispatch(getReviewsThunk(business.id))
-        alert("Review Updated")
+        setShowModal(false)
     }
 
     const handleDeleteClick = async (e) => {
@@ -37,10 +37,10 @@ function Editreview ({review, business}) {
         let deleteReview = await dispatch(deleteReviewThunk(review.id));
             if(deleteReview) {
                 await dispatch(getReviewsThunk(business.id))
+                setShowModal(false)
                 alert('Review Deleted')
             }
     }
-
 
 
     return(

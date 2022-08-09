@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getReviewsThunk } from "../../store/review";
-import  Editreview  from "../editReview/index"
+import  EditBusinessModal  from "../editReview/editReviewModal"
 
 
 
@@ -28,7 +28,8 @@ function BusinessReviews({business}) {
                 <>
                 <h3>{review.content}</h3>
                 <h3>Rating: {review.rating}</h3>
-                <Editreview business={business} review={review}/>
+                {review.user.id === user.id ? (
+                <EditBusinessModal business={business} review={review}/>):null}
                 </>
             )
         })}
