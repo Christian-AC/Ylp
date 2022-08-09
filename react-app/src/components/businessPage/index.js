@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
+import {FaEdit} from "react-icons/fa"
 import { getAllBusinessThunk } from '../../store/business';
 import EditBusiness from '../editBusiness/index'
 import BusinessReviews from "../businessReviews";
@@ -12,14 +13,19 @@ import './businessPage.css';
 function BusinessPage() {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const { id } = useParams();
+    const [isShown, setIsShown] = useState(false);
+
+
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
-    // console.log("-----------", id)
 
     const user = useSelector((state) => state.session.user)
     const businesses = useSelector((state) => Object.values(state.business))
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
+
+    const handleClick = event => {
+        setIsShown(current => !current);
+      };
 
     useEffect(() => {
         dispatch(getAllBusinessThunk())
@@ -38,9 +44,12 @@ function BusinessPage() {
                             <h2> {business.state} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
+                            <FaEdit size="22px" className="likebutton"  onClick={(e)=>handleClick(e)}/>
+                            {isShown &&
                             <div>
                                 <EditBusiness business={business}/>
                             </div>
+                            }
                             <div>
                                 <CreateReview business={business}/>
                             </div>

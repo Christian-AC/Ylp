@@ -17,7 +17,6 @@ function BusinessList() {
 
 
 
-
     const user = useSelector((state) => state.session.user)
     const businesses = useSelector((state) => Object.values(state.business))
 

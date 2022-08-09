@@ -31,26 +31,6 @@ function EditBusiness ({business}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const errors = [];
-
-        if (name.length > 40)
-          errors.push("Business name too long (40 characters or less)");
-
-        if (address.length === 0) errors.push("Address can't be empty");
-
-        if (city.length > 25)
-          errors.push("City name too long (25 characters or less)");
-
-        if (phone_number.length !== 10)
-          errors.push("Phone number must be 10 digits");
-
-        if (!website.includes("http://") && !website.includes("https://"))
-          errors.push("Website must include http:// or https://");
-
-        if (website.length > 52) errors.push("Website URL too long");
-
-        setValidationErrors(errors);
-
         const updateBusiness = {
             userId,
             name,
