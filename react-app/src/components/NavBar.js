@@ -11,7 +11,7 @@ const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
 
   return (
-    <nav className="nav-container">
+    <nav className="navbar-container">
         {!sessionUser && (
         <>
           <NavLink className="nav-buttons" to='/login' exact={true} activeClassName='active'>
@@ -24,7 +24,7 @@ const NavBar = () => {
       {sessionUser && (
         <>
           <NavLink to='/' className="nav-buttons" exact={true} activeClassName='active'>
-            <GrHome className='home-button' />
+            <GrHome/>
           </NavLink>
 
           <NavLink to='/business' className="nav-buttons" exact={true} activeClassName='active'>
