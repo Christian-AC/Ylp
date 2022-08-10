@@ -45,12 +45,10 @@ function BusinessPage() {
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
                             {business.user.id === user.id ? (
-
                             <div>
                                 <EditBusinessModal business={business}/>
                             </div>
                             ): null }
-
                             <div>
                                 <CreateReviewModal business={business}/>
                             </div>

@@ -2,21 +2,26 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     font-size: 40px;
+    color:white;
+    margin-top: 20px;
+    z-index: 1;
 }
 
 .home-scene{
     display: flex;
     justify-content: space-evenly;
     margin-left: auto;
-
+    margin-top: -400px;
 }
 
 .home-img{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
-    height: 350;
-    width: 80%;
+    height: 800px;
+    width: 100%;
     border-radius: 10px;
+    opacity: 0.8;
+    z-index: -1;
 }
 
 .github{
