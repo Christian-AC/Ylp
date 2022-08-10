@@ -6,6 +6,11 @@
     margin-top: 20px;
     z-index: 1;
 }
+.homepage-container {
+    background-image: url(./banner.jpg);
+    opacity: 0.8;
+    height: 800px;
+}
 
 .home-scene{
     display: flex;
