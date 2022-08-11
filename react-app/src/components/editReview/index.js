@@ -51,6 +51,7 @@ function Editreview ({review, business, setShowModal}) {
         e.preventDefault()
         console.log("ReviewId ====",review.id)
         let deleteReview = await dispatch(deleteReviewThunk(review.id));
+        setShowModal(false)
             if(deleteReview) {
                 await dispatch(getReviewsThunk(business.id))
                 setShowModal(false)

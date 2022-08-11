@@ -3,12 +3,12 @@ import { Modal } from '../../context/Modal';
 import Editreview from './index'
 
 
-function EditBusinessModal({business, review}) {
+function EditReviewModal({business, review}) {
     const [showModal, setShowModal] = useState(false);
 
     return (
       <>
-        <button onClick={() => setShowModal(true)}>Edit Review</button>
+        <button  className="loginbutton" onClick={() => setShowModal(true)}>Edit Review</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
             <Editreview business={business} review={review} setShowModal={setShowModal}/>
@@ -17,4 +17,4 @@ function EditBusinessModal({business, review}) {
       </>
     );
   }
-  export default EditBusinessModal;
+  export default EditReviewModal;

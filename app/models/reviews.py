@@ -23,6 +23,7 @@ class Review(db.Model):
             'id': self.id,
             'user': self.userIds.to_dict(),
             'businessId': self.businessId,
+            'reviewer': self.userIds.username,
             'content': self.content,
             'rating': self.rating,
             'created_at': self.created_at
