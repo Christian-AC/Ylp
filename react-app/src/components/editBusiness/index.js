@@ -94,17 +94,34 @@ function EditBusiness ({business, setShowModal}) {
 
     return (
         <>
-        <form className='editBusiness-container' onSubmit={handleSubmit}>
             <h2>Edit your business!</h2>
-            {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
-            <input type='text' value={name} placeholder='Business name' onChange={updateName} required/>
-            <input type='text' value={address} placeholder='address' onChange={updateAddress} required/>
-            <input type='text' value={city} placeholder='city' onChange={updateCity} required/>
-            <input type='text' value={state} placeholder='state' onChange={updateState} required/>
-            <input type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber}/>
-            <input type='text' value={website} placeholder='website' onChange={updateWebsite}/>
-            <button className="button" type="submit" onSubmit={() => showModal(false)}>Post</button>
-            <button onClick={(e)=>handleDeleteClick(e)}>Delete</button>
+            <form className='business-form' onSubmit={handleSubmit}>
+          {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
+          <div>
+          <label>Name</label>
+            <input className='name-form' type='text' value={name} placeholder='Business name' onChange={updateName} required/>
+          </div>
+          <div>
+            <label>Address</label>
+            <input className='address-form' type='text' value={address} placeholder='address' onChange={updateAddress} required/>
+          </div>
+          <div>
+            <label>City</label>
+            <input className='city-form' type='text' value={city} placeholder='city' onChange={updateCity} required/>
+          </div>
+          <div>
+            <label>State</label>
+            <input className ='state-form' type='text' value={state} placeholder='state' onChange={updateState} required/>
+          </div>
+          <div>
+            <label>Phone #</label>
+            <input className = 'phone-form' type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber} required/>
+          </div>
+          <div>
+            <label>Website</label>
+            <input className = 'website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
+          </div>
+            <button className="Create-Business" type="submit">Post</button>
         </form>
         </>
     )
