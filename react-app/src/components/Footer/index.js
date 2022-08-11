@@ -6,7 +6,6 @@ const Footer = () => {
 
   return (
     <div id="footer">
-
       <div id='footer-container'>
             <div className="each">
                 <a className="feet" href="https://github.com/Christian-AC">

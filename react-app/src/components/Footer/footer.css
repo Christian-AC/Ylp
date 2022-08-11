@@ -20,11 +20,11 @@
 
 #footer{
   font-family:helvetica;
-  position: fixed;
+  /* position: fixed; */
   left: 0px;
   bottom: 0px;
   right: 0px;
-
+  margin-top: 20px;
 }
 
 

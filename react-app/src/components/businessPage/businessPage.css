@@ -32,7 +32,7 @@
 }
 
 .info-container{
-    width: 175px;
+    width: min-content;
     height: min-content;
     padding: 2px;
     border: 1px solid rgb(198, 198, 198);
@@ -51,3 +51,12 @@
 .rating{
     margin-right: 10px;
 }
+
+.info{
+    border-top: 1px solid rgb(198, 198, 198);
+}
+
+.hours{
+    border-top: 1px solid rgb(198, 198, 198);
+}
+

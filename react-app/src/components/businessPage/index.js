@@ -81,14 +81,35 @@ function BusinessPage() {
                                     <h3> <AiOutlineCheck/> Good for Groups</h3>
                                 </div>
                             </div>
+                            <div className='hours'>
+                                <h2>Hours</h2>
+                                <div className='hour-container'>
+                                    <h3> Mon 11:00 AM - 9:00 PM</h3>
+                                    <h3> Tues 11:00 AM - 9:00 PM</h3>
+                                    <h3> Wed 11:00 AM - 9:00 PM</h3>
+                                    <h3> Thur 11:00 AM - 9:00 PM</h3>
+                                    <h3> Fri 11:00 AM - 9:00 PM</h3>
+                                    <h3> Sat 11:00 AM - 9:00 PM </h3>
+                                    <h3> Sun 11:00 AM - 9:00 PM</h3>
+                                </div>
+                            </div>
                             <BusinessReviews business={business}/>
                         </div>
                         <div className="info-container">
-                            <h2>More Info</h2>
+                            <h1>More Info</h1>
+                            <div className="info">
+                            <h2>Address</h2>
                             <h3> {business.address} </h3>
+                            </div>
                             <h3> {business.city}, {business.state} </h3>
+                            <div className="info">
+                            <h2>Phone Number</h2>
+                            </div>
                             <h3> <AiFillPhone/> {business.phone_number} </h3>
+                            <div className="info">
+                            <h2>Website</h2>
                             <h3> {business.website} </h3>
+                            </div>
                         </div>
                         </div>
                     </div>
