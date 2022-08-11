@@ -56,8 +56,8 @@ function CreateBusiness({setShowModal}) {
       }else if (phone_number.length !== 10 ) {
         errorsObj.phone_number ="Valid 10 digit phone number is required"
         error = true;
-      }else if(!website.includes('www')) {
-        errorsObj.website = "Please enter a valid website starting with 'www'"
+      }else if(!website.includes('www.')) {
+        errorsObj.website = "Please enter a valid website starting with 'www.'"
         error = true;
       }
       setErrors(errorsObj);

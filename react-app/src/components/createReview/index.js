@@ -48,7 +48,7 @@ function CreateReview({business, setShowModal}) {
 
     return (
         <>
-        <h1>Write a reivew</h1>
+        <h1>Write a review</h1>
             {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
         <form className="review-form" onSubmit={handleSubmit}>
             <div className="review-form-line">

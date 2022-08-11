@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect,useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
 import './LoginForm.css'
 
@@ -10,6 +10,7 @@ const LoginForm = ({setShowModal}) => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ const LoginForm = ({setShowModal}) => {
     if (data) {
       setErrors(data);
     }
+    return <Redirect to='/business'/>;
   };
 
   const updateEmail = (e) => {
@@ -35,12 +37,14 @@ const LoginForm = ({setShowModal}) => {
     if (data) {
       setErrors(data);
     }
+    return <Redirect to='/business'/>;
   };
 
   if (user) {
-    setShowModal(false)
-    return <Redirect to='/' />;
+    // setShowModal(false)
+    return <Redirect to='/business'/>;
   }
+
 
   return (
     <div classname='login-form-container'>

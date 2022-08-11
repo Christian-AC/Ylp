@@ -1,5 +1,5 @@
 import './footer.css';
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub,AiFillLinkedin } from 'react-icons/ai'
 
 
 const Footer = () => {
@@ -10,6 +10,9 @@ const Footer = () => {
             <div className="each">
                 <a className="feet" href="https://github.com/Christian-AC">
                     Christian Alcantara <AiFillGithub className="githubby" href="https://github.com/Christian-AC" />
+                </a>
+                <a className="feet" href="https://www.linkedin.com/in/christian-cayanan-48455a18a/">
+                    <AiFillLinkedin href="https://www.linkedin.com/in/christian-cayanan-48455a18a/"/>
                 </a>
             </div>
       </div>

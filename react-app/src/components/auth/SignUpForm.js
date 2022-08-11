@@ -77,16 +77,16 @@ const SignUpForm = ({setShowModal}) => {
 
   if (user) {
     setShowModal(false)
-    return <Redirect to='/' />;
+    return <Redirect to='/business' />;
   }
 
   return (
     <form className="signupform" onSubmit={onSignUp}>
       {Object.values(reactErrors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
       <div>
-        {/* {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))} */}
+        {errors.map((error, ind) => (
+          <div className='errors' key={ind}>{error}</div>
+        ))}
       </div>
       <div>
         <label>User Name</label>

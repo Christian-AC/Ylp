@@ -86,9 +86,8 @@ function EditBusiness ({business, setShowModal}) {
     const handleDeleteClick = async (e) => {
         e.preventDefault()
         dispatch(deleteBusinessThunk(business.id));
-        // alert("Business Deleted successfully")
-        history.push(`/`)
-
+        alert("Business Deleted successfully")
+        history.push(`/business`)
     }
 
 

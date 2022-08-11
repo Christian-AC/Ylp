@@ -10,10 +10,10 @@ from wtforms.validators import DataRequired, ValidationError, Length
 #  'VT','VI','VA','WA','WV','WI','WY'
 # ]
 
-def valid_website(form, field):
-    website = field.data
-    if "www" not in website or "." not in website:
-        raise ValidationError("Please send a valid website.")
+# def valid_website(form, field):
+#     website = field.data
+#     if "www" not in website or "." not in website:
+#         raise ValidationError("Please send a valid website.")
 
 
 
@@ -24,4 +24,4 @@ class BusinessForm(FlaskForm):
     city = StringField('city', validators=[DataRequired(message="City is required")])
     state = StringField('state', validators=[DataRequired(message="State is required")])
     phone_number = StringField('phone_number', validators=[DataRequired(message="Phone Number is required"),Length(min=10,message="Phone Number must be at least 10 digits" )])
-    website = StringField('website', validators=[DataRequired(message="Website is required"), valid_website])
+    website = StringField('website', validators=[DataRequired(message="Website is required")])
