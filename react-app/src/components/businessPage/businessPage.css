@@ -60,3 +60,7 @@
     border-top: 1px solid rgb(198, 198, 198);
 }
 
+.star-component{
+    display: flex;
+    flex-direction: row;
+}

@@ -5,6 +5,7 @@ import { getAllBusinessThunk } from '../../store/business';
 import {AiFillPhone, AiOutlineCheck} from "react-icons/ai"
 import EditBusiness from '../editBusiness/index'
 import BusinessReviews from "../businessReviews";
+import StarComponet from "./starcomponet";
 import './businessList.css'
 
 
@@ -38,6 +39,7 @@ function BusinessList() {
                         return(
                             <div className='business-list'>
                                 <NavLink className='link' to={`/business/${business.id}`}><h1> {business.name} </h1></NavLink>
+                                <StarComponet business={business}/>
                                 <h3> {business.address} </h3>
                                 <h3> {business.city}, {business.state} </h3>
                                 <h3> <AiFillPhone/> {business.phone_number} </h3>

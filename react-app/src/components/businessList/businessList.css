@@ -14,7 +14,8 @@
 }
 
 .link{
-    text-decoration: none
+    /* text-decoration: none; */
+    color: inherit;
 }
 
 .business-list-header{
