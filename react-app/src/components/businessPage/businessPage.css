@@ -32,7 +32,7 @@
 }
 
 .info-container{
-    width: min-content;
+    width: 250px;
     height: min-content;
     padding: 2px;
     border: 1px solid rgb(198, 198, 198);
@@ -59,4 +59,3 @@
 .hours{
     border-top: 1px solid rgb(198, 198, 198);
 }
-
