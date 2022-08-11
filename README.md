@@ -26,4 +26,4 @@ Clone Ylp into your desired directory:
 [USER STORIES](https://github.com/Christian-AC/Ylp/wiki/User-Stories)
 
 # Splash Page!
-[chrome_tp5I0adlIg](https://user-images.githubusercontent.com/92351444/184051327-7032f124-887b-4c9a-9510-3958a1becc6f.jpg)
+![image](https://user-images.githubusercontent.com/92351444/184051327-7032f124-887b-4c9a-9510-3958a1becc6f.jpg)
