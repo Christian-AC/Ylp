@@ -94,6 +94,7 @@ const SignUpForm = ({setShowModal}) => {
           className='username-input'
           type='text'
           name='username'
+          placeholder='username'
           onChange={updateUsername}
           value={username}
           required={true}
@@ -105,6 +106,7 @@ const SignUpForm = ({setShowModal}) => {
           className='email-input'
           type='text'
           name='email'
+          placeholder='email'
           onChange={updateEmail}
           value={email}
           required={true}
@@ -116,6 +118,7 @@ const SignUpForm = ({setShowModal}) => {
           className='password-input'
           type='password'
           name='password'
+          placeholder='password'
           onChange={updatePassword}
           value={password}
           required={true}
@@ -127,6 +130,7 @@ const SignUpForm = ({setShowModal}) => {
           className='repeat-password-input'
           type='password'
           name='repeat_password'
+          placeholder='password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
