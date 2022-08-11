@@ -15,6 +15,12 @@ function BusinessReviews({business}) {
     const user = useSelector((state) => state.session.user)
     const reviews = useSelector((state) => Object.values(state.review).filter(review => review.businessId === businessId))
 
+    let rating = 0;
+  const ratings = reviews.map((review) => review.rating);
+  if (ratings.length) {
+    ratings?.forEach((rate) => (rating = rate + rating));
+    rating = rating / ratings.length;
+  }
 
     useEffect(async () => {
        await dispatch(getReviewsThunk(business.id))
