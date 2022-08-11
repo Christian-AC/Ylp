@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createBusinessThunk } from "../../store/business";
 import './createBusiness.css'
 
-function CreateBusiness() {
+function CreateBusiness({setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -74,6 +74,7 @@ function CreateBusiness() {
         }
         let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
         history.push(`/business/${newBusiness.id}`)
+        setShowModal(false)
       }
     }
 
