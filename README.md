@@ -31,3 +31,6 @@ Clone Ylp into your desired directory:
 
 # Add Businesses
 ![chrome_LT9JuD7MqE](https://user-images.githubusercontent.com/92351444/184051574-64adee6b-33d8-4164-83bd-d64a8a58251c.png)
+
+# Business Page
+![chrome_VRsW1Kipps](https://user-images.githubusercontent.com/92351444/184213486-f1f4a318-88ab-4a38-bf09-94d142a4b4a5.png)
