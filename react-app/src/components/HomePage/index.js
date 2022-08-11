@@ -3,6 +3,8 @@ import { AiFillGithub } from 'react-icons/ai'
 import { useSelector } from 'react-redux';
 import LoginModal from './loginModal';
 import SignupModal from './signupModal';
+import Footer from "../Footer";
+
 
 
 function HomePage() {
@@ -19,6 +21,7 @@ function HomePage() {
                 </>
             )}
         </div>
+            <Footer/>
         </>
     )
 }
