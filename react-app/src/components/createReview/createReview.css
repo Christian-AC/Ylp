@@ -1,0 +1,34 @@
+.review-form-line{
+    display: flex;
+    flex-direction: row;
+}
+
+.review-label{
+    margin-right: 10px;
+}
+
+.rating-label{
+    margin-right: 19px;
+}
+
+.review-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.review-select {
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    background-color: #f8f8f8;
+    font-size: 12px;
+    resize: none;
+  }

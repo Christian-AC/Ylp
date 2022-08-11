@@ -54,7 +54,7 @@ function BusinessPage() {
                     <div className='top-container'>
                     <h1> {business.name} </h1>
                     <div className='rating-container'>
-                        <h2>{rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
+                        <h2 className='rating'>{rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
                         <h2>{reviews.length} reviews</h2>
                     </div>
                     </div>

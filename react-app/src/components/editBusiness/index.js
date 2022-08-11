@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllBusinessThunk, updateBusinessThunk, deleteBusinessThunk } from "../../store/business";
 import EditBusinessModal from "./editBusinessModal";
-import './editBusiness.css'
+// import './editBusiness.css'
 
 
 function EditBusiness ({business, setShowModal}) {

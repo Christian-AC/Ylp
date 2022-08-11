@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { createReviewThunk, getReviewsThunk} from '../../store/review';
-
+import './createReview.css'
 
 function CreateReview({business, setShowModal}) {
     const dispatch = useDispatch();
@@ -48,19 +48,24 @@ function CreateReview({business, setShowModal}) {
 
     return (
         <>
-        <h1>Add a reivew</h1>
+        <h1>Write a reivew</h1>
             {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
         <form className="review-form" onSubmit={handleSubmit}>
-            <textarea type='textarea' value={content} placeHolder="content" onChange={updateContent} required/>
+            <div className="review-form-line">
+            <label className="review-label">Review</label>
+            <textarea rows="10" cols="50" className='review-textarea' value={content} placeHolder="content" onChange={updateContent} required/>
+            </div>
+            <div className="rating-form-line">
+            <label className="rating-label">Rating</label>
             <select type='text' value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
-                Rating:
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="1">1/5</option>
+            <option value="2">2/5</option>
+            <option value="3">3/5</option>
+            <option value="4">4/5</option>
+            <option value="5">5/5</option>
             </select>
-            <button className="button" type="submit">Submit</button>
+            </div>
+            <button className="Create-Business" type="submit">Submit</button>
         </form>
         </>
     )

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
+import {AiFillPhone, AiOutlineCheck} from "react-icons/ai"
 import EditBusiness from '../editBusiness/index'
 import BusinessReviews from "../businessReviews";
+import './businessList.css'
 
 
 
@@ -28,22 +30,24 @@ function BusinessList() {
 
 
     return (
-        <>
-            <div >
-                <h1>businesses:</h1>
+        <div>
+            <h1 className='business-list-header'>Businesses:</h1>
+            <div className="business-list-container" >
                     <>
                     {businesses.map((business) =>{
                         return(
-                        <>
-                        <div>
-                            <NavLink to={`/business/${business.id}`}><h3> {business.name} </h3></NavLink>
-                        </div>
-                        </>
+                            <div className='business-list'>
+                                <NavLink className='link' to={`/business/${business.id}`}><h1> {business.name} </h1></NavLink>
+                                <h3> {business.address} </h3>
+                                <h3> {business.city}, {business.state} </h3>
+                                <h3> <AiFillPhone/> {business.phone_number} </h3>
+                                <h3> {business.website} </h3>
+                            </div>
                          )
                     })}
                     </>
             </div>
-        </>
+        </div>
         )
 }
 export default BusinessList;

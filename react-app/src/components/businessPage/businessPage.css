@@ -46,5 +46,8 @@
     height: 150px;
     display: flex;
     flex-flow: column wrap;
+}
 
+.rating{
+    margin-right: 10px;
 }
