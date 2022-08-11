@@ -11,7 +11,7 @@ const LogoutButton = () => {
     dispatch(logout());
     history.push('/')
   };
-  return <BiLogOut onClick={onLogout}/>
+  return <button className="Logout-Button" onClick={onLogout}> Logout <BiLogOut/> </button>
 };
 
 export default LogoutButton;

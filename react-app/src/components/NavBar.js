@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { GrHome } from "react-icons/gr";
 import { IoMdCreate } from "react-icons/io";
 import { FiLogOut } from "react-icons/gr";
+import CreateBusinessModal from './HomePage/createBusinessModal';
 import './NavBar.css'
 
 const NavBar = () => {
@@ -12,30 +13,14 @@ const NavBar = () => {
 
   return (
     <nav className="navbar-container">
-        {!sessionUser && (
-        <>
-          <NavLink className="nav-buttons" to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-          <NavLink to='/sign-up' className="nav-buttons" exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </>)}
+      <NavLink to='/' className="nav-buttons" exact={true} activeClassName='active'>
+        <img className='logo' src='https://i.imgur.com/Q5G3Jlo.png'/>
+      </NavLink>
       {sessionUser && (
-        <>
-          <NavLink to='/' className="nav-buttons" exact={true} activeClassName='active'>
-            <GrHome/>
-          </NavLink>
-
-          <NavLink to='/business' className="nav-buttons" exact={true} activeClassName='active'>
-            Business List
-          </NavLink>
-
-          <NavLink to='/business/create' className="nav-buttons" exact={true} activeClassName='active'>
-          <IoMdCreate/> Create Business
-          </NavLink>
+        <div >
+          <CreateBusinessModal/>
           <LogoutButton />
-        </>
+        </div>
       )}
     </nav>
   );

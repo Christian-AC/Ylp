@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import './LoginForm.css'
 
-const LoginForm = () => {
+const LoginForm = ({setShowModal}) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,6 +38,7 @@ const LoginForm = () => {
   };
 
   if (user) {
+    setShowModal(false)
     return <Redirect to='/' />;
   }
 
@@ -46,7 +47,7 @@ const LoginForm = () => {
       <form className="loginform" onSubmit={onLogin}>
         <div>
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div className='errors' key={ind}>{error}</div>
           ))}
         </div>
         <div>
