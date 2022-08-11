@@ -87,7 +87,7 @@ function EditBusiness ({business, setShowModal}) {
         e.preventDefault()
         dispatch(deleteBusinessThunk(business.id));
         // alert("Business Deleted successfully")
-        history.push(`/business`)
+        history.push(`/`)
 
     }
 
@@ -122,6 +122,7 @@ function EditBusiness ({business, setShowModal}) {
             <input className = 'website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
           </div>
             <button className="Create-Business" type="submit">Post</button>
+            <button className="Create-Business" onClick={(e)=>handleDeleteClick(e)}>Delete</button>
         </form>
         </>
     )
