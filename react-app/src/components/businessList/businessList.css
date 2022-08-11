@@ -8,9 +8,10 @@
 }
 
 .business-list{
-    width: 300px;
-    border-bottom: 1px solid rgb(198, 198, 198);
+    width: 370px;
+    border: 1px solid rgb(198, 198, 198);
     margin: 20px;
+    box-shadow: 10px 5px 5px rgb(205, 205, 205);
 }
 
 .link{
@@ -23,4 +24,17 @@
     margin-top: 3%;
     width: 60%;
     padding: 10px;
+}
+
+.business-list-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.star-component{
+    display: flex;
+    flex-direction: row;
+    height: 15px;
+
 }

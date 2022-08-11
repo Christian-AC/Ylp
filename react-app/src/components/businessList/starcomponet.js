@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getReviewsThunk } from "../../store/review";
-import {AiFillPhone, AiOutlineCheck} from "react-icons/ai"
-import EditBusiness from '../editBusiness/index'
-import BusinessReviews from "../businessReviews";
+import './businessList.css'
 
 function StarComponet({business}) {
     const dispatch = useDispatch();
