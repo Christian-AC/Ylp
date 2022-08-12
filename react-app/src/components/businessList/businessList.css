@@ -7,6 +7,7 @@
     width: 70%;
     background-color: rgb(247, 241, 233);
     box-shadow: 10px 5px 5px rgb(205, 205, 205);
+    border-radius: 5%;
 }
 
 .business-list-container{
