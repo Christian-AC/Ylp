@@ -17,7 +17,7 @@ const NavBar = () => {
       <div id='footer-container'>
             <div className="each">
                 <a className="feet" href="https://github.com/Christian-AC">
-                    Christian Alcantara <AiFillGithub className="githubby" href="https://github.com/Christian-AC" />
+                   Made by: Christian Alcantara <AiFillGithub className="githubby" href="https://github.com/Christian-AC" />
                 </a>
                 <a className="feet" href="https://www.linkedin.com/in/christian-cayanan-48455a18a/">
                     <AiFillLinkedin href="https://www.linkedin.com/in/christian-cayanan-48455a18a/"/>
@@ -27,7 +27,7 @@ const NavBar = () => {
       {sessionUser && (
         <div className="navbar-button-container" >
           <NavLink to='/business' exact={true} activeClassName='active'>
-            <button className="Create-Business">Business List</button>
+            <button className="Browse-Button">Browse Businesses</button>
           </NavLink>
           <CreateBusinessModal/>
           <LogoutButton />

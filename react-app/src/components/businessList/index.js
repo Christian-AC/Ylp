@@ -30,7 +30,9 @@ function BusinessList() {
 
     return (
         <div className="whole-container">
-            <h1 className='business-list-header'>Businesses:</h1>
+            <div>
+                <h1 className='business-list-header'>Browsing Businesses:</h1>
+            </div>
             <div className="business-list-container" >
                     <>
                     {businesses.map((business) =>{

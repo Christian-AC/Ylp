@@ -51,9 +51,12 @@
 }
 
 .business-list-header{
+    font-family:helvetica;
+    font-size: 30px;
     margin: auto;
     margin-top: 5%;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 
