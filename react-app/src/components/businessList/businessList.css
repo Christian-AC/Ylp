@@ -1,17 +1,29 @@
+.whole-container{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-top: 5%;
+    margin-left: 20%;
+    width: 70%;
+    background-color: rgb(247, 241, 233);
+}
+
 .business-list-container{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 800px;
     width: 40%;
-    margin-left: 20%;
+     padding-left: 20px;
 }
+
 
 .business-list{
     width: 370px;
     border: 1px solid rgb(198, 198, 198);
     margin: 20px;
     box-shadow: 10px 5px 5px rgb(205, 205, 205);
+    /* padding-left: 20px; */
 }
 
 .link{
@@ -21,8 +33,7 @@
 
 .business-list-header{
     margin: auto;
-    margin-top: 3%;
-    width: 60%;
+    margin-top: 5%;
     padding: 10px;
 }
 

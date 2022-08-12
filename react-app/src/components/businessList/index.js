@@ -31,7 +31,7 @@ function BusinessList() {
 
 
     return (
-        <div>
+        <div className="whole-container">
             <h1 className='business-list-header'>Businesses:</h1>
             <div className="business-list-container" >
                     <>
