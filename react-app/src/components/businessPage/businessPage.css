@@ -77,6 +77,18 @@
     margin-right: 10px;
 }
 
+.reviews{
+    margin-top: 22px;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.reviews-star{
+    margin-top: 27px;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
 .info{
     border-top: 1px solid rgb(198, 198, 198);
 }
