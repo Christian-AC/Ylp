@@ -126,7 +126,7 @@ function EditBusiness ({business, setShowModal}) {
           </div>
           <div>
             <label>Logo Image</label>
-            <input className = 'logo-form' type='text' value={imageURL} placeholder='Logo Image' onChange={updateImageURL} required/>
+            <input className = 'logo-form' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required/>
           </div>
             <button className="Create-Business" type="submit">Post</button>
             <button className="Create-Business" onClick={(e)=>handleDeleteClick(e)}>Delete</button>
