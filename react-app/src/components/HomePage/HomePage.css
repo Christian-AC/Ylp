@@ -21,7 +21,7 @@
     background-image: url(./banner.jpg);
     /* background: 100%; */
     opacity: 0.8;
-    height: 1200px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
