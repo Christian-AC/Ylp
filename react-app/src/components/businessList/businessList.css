@@ -6,6 +6,7 @@
     margin-right: 20%;
     width: 70%;
     background-color: rgb(247, 241, 233);
+    box-shadow: 10px 5px 5px rgb(205, 205, 205);
 }
 
 .business-list-container{
@@ -40,6 +41,7 @@
 .business-list{
     width: 370px;
     border: 1px solid rgb(198, 198, 198);
+    background-color: rgb(243, 242, 242);
     margin: 20px;
     box-shadow: 10px 5px 5px rgb(205, 205, 205);
     /* padding-left: 20px; */
