@@ -62,14 +62,14 @@ function CreateBusiness({setShowModal}) {
         errorsObj.website = "Please enter a valid website starting with 'www.'"
         error = true;
       }else if (!imageURL.includes(".jpg") && !imageURL.includes(".png") && !imageURL.includes(".JPG") && !imageURL.includes(".PNG") && !imageURL.includes("image")) {
-        errorsObj.imageURL = "imageURL must be jpg/png or contain image"
+        errorsObj.imageURL = "Logo image must be jpg/png/jpeg or contain image"
         error = true
       }
       else if (imageURL.length < 4) {
-        errorsObj.imageURL = "imageURL must be at least 4 characters."
+        errorsObj.imageURL = "Logo image must be at least 4 characters."
         error = true
       }
-      
+
       setErrors(errorsObj);
 
       if(!error) {
