@@ -1,5 +1,5 @@
 # Welcome to YLP a yelp clone
-Ylp was builts as a clone of yelp. With Ylp you can do add your own businesses or review other business that you may have visted.
+Ylp was builts as a clone of yelp. With Ylp you can add your own businesses or review other business that you may have visted.
 
 # Technologies Used
 * Frontend: React
