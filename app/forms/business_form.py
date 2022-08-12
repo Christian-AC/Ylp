@@ -25,3 +25,4 @@ class BusinessForm(FlaskForm):
     state = StringField('state', validators=[DataRequired(message="State is required")])
     phone_number = StringField('phone_number', validators=[DataRequired(message="Phone Number is required"),Length(min=10,message="Phone Number must be at least 10 digits" )])
     website = StringField('website', validators=[DataRequired(message="Website is required")])
+    imageURL = StringField('imageURL', validators=[DataRequired(message="Logo image is required")])

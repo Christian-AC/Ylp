@@ -41,7 +41,8 @@ def post_business():
             city=form.data['city'],
             state=form.data['state'],
             phone_number=form.data['phone_number'],
-            website=form.data['website']
+            website=form.data['website'],
+            imageURL=form.data['imageURL']
         )
         db.session.add(business)
         db.session.commit()
@@ -61,7 +62,8 @@ def put_business(id):
         business.city=data['city'],
         business.state=data['state'],
         business.phone_number=data['phone_number'],
-        business.website=data['website']
+        business.website=data['website'],
+        business.imageURL=data['imageURL']
         db.session.commit()
         return business.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401

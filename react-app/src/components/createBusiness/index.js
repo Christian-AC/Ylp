@@ -21,6 +21,7 @@ function CreateBusiness({setShowModal}) {
     const [state, setState] = useState("");
     const [phone_number, setPhoneNumber] = useState("");
     const [website, setWebsite] = useState("");
+    const [imageURL, setimageURL] = useState("");
 
     const updateName = (e) => setName(e.target.value)
     const updateAddress = (e) => setAddress(e.target.value)
@@ -28,6 +29,7 @@ function CreateBusiness({setShowModal}) {
     const updateState = (e) => setState(e.target.value)
     const updatePhoneNumber = (e) => setPhoneNumber(e.target.value)
     const updateWebsite = (e) => setWebsite(e.target.value)
+    const updateImageURL = (e) => setimageURL(e.target.value)
 
 
     const handleSubmit = async (e) => {
@@ -59,7 +61,15 @@ function CreateBusiness({setShowModal}) {
       }else if(!website.includes('www.')) {
         errorsObj.website = "Please enter a valid website starting with 'www.'"
         error = true;
+      }else if (!imageURL.includes(".jpg") && !imageURL.includes(".png") && !imageURL.includes(".JPG") && !imageURL.includes(".PNG") && !imageURL.includes("image")) {
+        errorsObj.imageURL = "imageURL must be jpg/png or contain image"
+        error = true
       }
+      else if (imageURL.length < 4) {
+        errorsObj.imageURL = "imageURL must be at least 4 characters."
+        error = true
+      }
+      
       setErrors(errorsObj);
 
       if(!error) {
@@ -71,6 +81,7 @@ function CreateBusiness({setShowModal}) {
             state,
             phone_number,
             website,
+            imageURL
         }
         let newBusiness = await dispatch(createBusinessThunk(createdBusiness))
         history.push(`/business/${newBusiness.id}`)
@@ -107,6 +118,10 @@ function CreateBusiness({setShowModal}) {
           <div>
             <label>Website</label>
             <input className = 'website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
+          </div>
+          <div>
+            <label>Logo Image</label>
+            <input className = 'logo-form' type='text' value={imageURL} placeholder='Logo Image' onChange={updateImageURL} required/>
           </div>
             <button className="Create-Business" type="submit">Post</button>
         </form>

@@ -9,10 +9,8 @@ import EditBusinessModal from "./editBusinessModal";
 function EditBusiness ({business, setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const [showModal, setShowModal] = useState(false);
     const showModal = EditBusinessModal.showModal
     const user = useSelector(state => state.session.user)
-    // console.log(name)
     let errorsObj = {content: ''};
 
     const [userId] = useState((user.id));
@@ -22,6 +20,8 @@ function EditBusiness ({business, setShowModal}) {
     const [state, setState] = useState(business.state);
     const [phone_number, setPhoneNumber] = useState(business.phone_number);
     const [website, setWebsite] = useState(business.website);
+    const [imageURL, setimageURL] = useState(business.imageURL);
+    console.log('-------------',business.imageURL)
 
     const [errors, setErrors] = useState(errorsObj);
 
@@ -31,7 +31,7 @@ function EditBusiness ({business, setShowModal}) {
     const updateState = (e) => setState(e.target.value)
     const updatePhoneNumber = (e) => setPhoneNumber(e.target.value)
     const updateWebsite = (e) => setWebsite(e.target.value)
-    // console.log(name)
+    const updateImageURL = (e) => setimageURL(e.target.value)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -61,6 +61,13 @@ function EditBusiness ({business, setShowModal}) {
         }else if(!website.includes('www')) {
           errorsObj.website = "Please enter a valid website starting with 'www'"
           error = true;
+        }else if (!imageURL.includes(".jpg") && !imageURL.includes(".png") && !imageURL.includes(".JPG") && !imageURL.includes(".PNG") && !imageURL.includes("image")) {
+          errorsObj.imageURL = "imageURL must be jpg/png or contain image"
+          error = true
+        }
+        else if (imageURL.length < 4) {
+          errorsObj.imageURL = "imageURL must be at least 4 characters."
+          error = true
         }
         setErrors(errorsObj);
 
@@ -73,13 +80,10 @@ function EditBusiness ({business, setShowModal}) {
                 state,
                 phone_number,
                 website,
+                imageURL
             }
-            // console.log(createdBusiness)
-
             await dispatch(updateBusinessThunk(updateBusiness, business.id))
             await dispatch(getAllBusinessThunk())
-            // alert("Business Updated")
-            // history.push(`/business/${business.id}`)
             setShowModal(false)
         }
     }
@@ -119,6 +123,10 @@ function EditBusiness ({business, setShowModal}) {
           <div>
             <label>Website</label>
             <input className = 'website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
+          </div>
+          <div>
+            <label>Logo Image</label>
+            <input className = 'logo-form' type='text' value={imageURL} placeholder='Logo Image' onChange={updateImageURL} required/>
           </div>
             <button className="Create-Business" type="submit">Post</button>
             <button className="Create-Business" onClick={(e)=>handleDeleteClick(e)}>Delete</button>

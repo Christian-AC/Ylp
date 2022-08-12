@@ -15,6 +15,7 @@ class Business(db.Model):
     state = db.Column(db.String(30), nullable=False)
     phone_number = db.Column(db.String(40), nullable=False)
     website = db.Column(db.String(80), nullable=False)
+    imageURL = db.Column(db.String(255))
 
     userIds = db.relationship("User", back_populates="business")
     reviews = db.relationship("Review", back_populates="business", cascade="all, delete")
@@ -29,5 +30,6 @@ class Business(db.Model):
             'city': self.city,
             'state': self.state,
             'phone_number': self.phone_number,
-            'website': self.website
+            'website': self.website,
+            'imageURL': self.imageURL
         }
