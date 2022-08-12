@@ -1,4 +1,6 @@
 .navbar-container{
+    position: fixed;
+    top:0;
     /* opacity: 0.8; */
     padding-top:7px;
     height: 50px;
@@ -7,14 +9,32 @@
     background-color: red;
     color: black;
     border-bottom:1px solid rgb(218, 218, 218);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    z-index: 2;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: space-between; */
+}
+
+#footer-container{
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 5px;
+    width: 300px;
 }
 
 .logo{
+    position: fixed;
+    left: 0px;
     width: 75px;
-    height: 75%;
+    height: 50px;
+}
+
+.navbar-button-container{
+    top: 5px;
+    position: fixed;
+    right: 0;
+    width: 450px;
 }
 
 .Logout-Button {

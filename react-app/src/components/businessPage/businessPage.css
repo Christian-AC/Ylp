@@ -14,8 +14,16 @@
     border: 1px solid white;
     border-radius: 50%;
 }
-.business-name{
-    font-size: 40px
+.business-name-page{
+    display: flex;
+    font-size: 45px;
+    margin-bottom:10px;
+}
+
+.name-and-stars{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .top-container{
@@ -29,8 +37,8 @@
 .rating-container{
     display: flex;
     flex-direction: row;
-    margin-left: 30px;
-    padding-left: 30px;
+    /* margin-left: 30px; */
+    /* padding-left: 30px; */
 }
 .business-buttons{
     display: flex;
@@ -65,6 +73,7 @@
 }
 
 .rating{
+    font-size: 20px;
     margin-right: 10px;
 }
 

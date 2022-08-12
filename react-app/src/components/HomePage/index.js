@@ -17,15 +17,16 @@ function HomePage() {
     return (
         <>
         <div className="homepage-container">
-            <h1  className="home-title">Welcome to Ylp my Yelp Clone!</h1>\
+            <h1  className="home-title">Welcome to Ylp my Yelp Clone!</h1>
+            <h3 className="home-content"> With Ylp you can add your own business or add review of other business that you have visted.</h3>
             {!sessionUser && (
                 <>
-                    <LoginModal/>
-                    <SignupModal/>
+                <LoginModal/>
+                 <SignupModal/>
                 </>
             )}
         </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }

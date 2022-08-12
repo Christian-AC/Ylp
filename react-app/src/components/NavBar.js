@@ -2,9 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
-import { GrHome } from "react-icons/gr";
-import { IoMdCreate } from "react-icons/io";
-import { FiLogOut } from "react-icons/gr";
+import { AiFillGithub,AiFillLinkedin } from 'react-icons/ai'
 import CreateBusinessModal from './HomePage/createBusinessModal';
 import './NavBar.css'
 
@@ -16,8 +14,18 @@ const NavBar = () => {
       <NavLink to='/' className="nav-buttons" exact={true} activeClassName='active'>
         <img className='logo' src='https://i.imgur.com/Q5G3Jlo.png'/>
       </NavLink>
+      <div id='footer-container'>
+            <div className="each">
+                <a className="feet" href="https://github.com/Christian-AC">
+                    Christian Alcantara <AiFillGithub className="githubby" href="https://github.com/Christian-AC" />
+                </a>
+                <a className="feet" href="https://www.linkedin.com/in/christian-cayanan-48455a18a/">
+                    <AiFillLinkedin href="https://www.linkedin.com/in/christian-cayanan-48455a18a/"/>
+                </a>
+            </div>
+      </div>
       {sessionUser && (
-        <div >
+        <div className="navbar-button-container" >
           <NavLink to='/business' exact={true} activeClassName='active'>
             <button className="Create-Business">Business List</button>
           </NavLink>

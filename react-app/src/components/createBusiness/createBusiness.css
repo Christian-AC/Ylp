@@ -101,6 +101,18 @@
     outline:none;
     font-family:Helvetica;
     margin-left:30px;
-    margin-right:10px;
+    margin-right:9px;
+    margin-top:20px
+}
+
+.logo-form{
+    padding:12px;
+    font-size:12px;
+    margin-bottom: 2px;
+    border:1px solid rgb(235, 235, 235);
+    outline:none;
+    font-family:Helvetica;
+    margin-left:4px;
+    margin-right:14px;
     margin-top:20px
 }

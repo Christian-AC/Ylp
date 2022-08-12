@@ -5,15 +5,27 @@
     color:white;
     margin-top: 80px;
     margin-bottom: 80px;
-    z-index: 1;
+    /* z-index: 1; */
+}
+
+.home-content{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    color:white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    /* z-index: 1; */
 }
 .homepage-container {
     background-image: url(./banner.jpg);
+    /* background: 100%; */
     opacity: 0.8;
-    height: 800px;
+    height: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    width: 100%;
 }
 
 .HomePage-Button {
@@ -52,7 +64,7 @@
     width: 100%;
     border-radius: 10px;
     opacity: 0.8;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .github{

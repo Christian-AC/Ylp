@@ -9,8 +9,6 @@ import StarComponet from "./starcomponet";
 import './businessList.css'
 
 
-
-
 function BusinessList() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -39,8 +37,11 @@ function BusinessList() {
                         return(
                             <div className='business-list'>
                                 <div className='business-list-top'>
-                                <NavLink className='link' to={`/business/${business.id}`}><h2> {business.name} </h2></NavLink>
-                                <StarComponet business={business}/>
+                                <img alt='business-logo-list' src={business.imageURL} className='business-logo-list'/>
+                                    <div className='name-and-stars'>
+                                        <NavLink className='link' to={`/business/${business.id}`}><h2 className='business-name'> {business.name} </h2></NavLink>
+                                        <StarComponet business={business}/>
+                                    </div>
                                 </div>
                                 <h3> {business.address} </h3>
                                 <h3> {business.city}, {business.state} </h3>

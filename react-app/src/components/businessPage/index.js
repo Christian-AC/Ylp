@@ -52,12 +52,14 @@ function BusinessPage() {
                 <>
                 <div className="business-container">
                     <div className='top-container'>
-                    <img alt='business-logo' src={business.imageURL} className='business-logo'/>
-                    <h1 className="business-name"> {business.name} </h1>
-                    <div className='rating-container'>
-                        <h2 className='rating'>{rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
-                        <h2>{reviews.length} reviews</h2>
-                    </div>
+                        <img alt='business-logo' src={business.imageURL} className='business-logo'/>
+                        <div className="name-and-stars">
+                            <h5 className="business-name-page"> {business.name} </h5>
+                            <div className='rating-container'>
+                                <h2 className='rating'>{rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
+                                <h2>{reviews.length} reviews</h2>
+                            </div>
+                        </div>
                     </div>
                     <div className='business-buttons'>
                         <div>
