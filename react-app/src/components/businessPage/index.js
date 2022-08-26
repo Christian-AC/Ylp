@@ -32,7 +32,7 @@ function BusinessPage() {
     const ratings = reviews?.map((review) => review.rating);
     if (ratings.length) {
         ratings?.forEach((rate) => (rating = rate + rating));
-        rating = rating / ratings.length;
+        rating = (rating / ratings.length).toFixed(1)
     }
 
 
