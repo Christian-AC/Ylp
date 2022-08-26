@@ -55,7 +55,7 @@ function BusinessPage() {
                         <div className="name-and-stars">
                             <h5 className="business-name-page"> {business.name} </h5>
                             <div className='rating-container'>
-                                <h2 className='rating'>{rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
+                                <h2 className='rating'>{rating}<img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
                                 <h2 className='reviews'>{reviews.length} reviews</h2>
                             </div>
                         </div>
