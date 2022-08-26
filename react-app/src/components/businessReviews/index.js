@@ -16,7 +16,7 @@ function BusinessReviews({business}) {
     const user = useSelector((state) => state.session.user)
     const reviews = useSelector((state) => Object.values(state.review).filter(review => review.businessId === businessId))
     const sortedReviews = reviews.sort().reverse()
-    
+
     let rating = 0;
     const ratings = reviews.map((review) => review.rating);
     if (ratings.length) {
@@ -36,7 +36,7 @@ function BusinessReviews({business}) {
                   <>
                   <div className="single-review">
                     <h1>{review.reviewer}</h1>
-                    <h3 className='review-rating'>{review.rating}/5  <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h3>
+                    <h3 className='review-rating'>{review.rating} <img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h3>
                     {review.user.id === user.id ? (
                     <EditReviewModal business={business} review={review}/>):null}
                   </div>

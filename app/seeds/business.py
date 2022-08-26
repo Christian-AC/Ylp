@@ -4,11 +4,11 @@ from app.models import db, Business
 # Adds a businesses, you can add other businesses here if you want
 def seed_businesses():
     cane = Business(
-        userId = 1, name= "Raising Cane's", address= "8430 Edgewater Dr", city= "Oakland", state= "California", phone_number="(510)542-5872", website="https://www.raisingcanes.com", imageURL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Raising_Cane%27s_Chicken_Fingers_logo.svg/1200px-Raising_Cane%27s_Chicken_Fingers_logo.svg.png')
+        userId = 1, name= "Raising Cane's", address= "8430 Edgewater Dr", city= "Oakland", state= "California", phone_number="5105425872", website="https://www.raisingcanes.com", imageURL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Raising_Cane%27s_Chicken_Fingers_logo.svg/1200px-Raising_Cane%27s_Chicken_Fingers_logo.svg.png')
     hotboys = Business(
-        userId = 2, name= "World Famous Hotboys", address= "1601 San Pablo Ave", city= "Oakland", state= "California", phone_number="(510)888-4892", website="https://www.worldfamoushotboys.com/", imageURL = 'https://d33wubrfki0l68.cloudfront.net/706299a920cdcd72a8189d6826f7f1d1eb481db4/49fcd/assets/images/imagepng_0.jpg')
+        userId = 2, name= "World Famous Hotboys", address= "1601 San Pablo Ave", city= "Oakland", state= "California", phone_number="5108884892", website="https://www.worldfamoushotboys.com/", imageURL = 'https://d33wubrfki0l68.cloudfront.net/706299a920cdcd72a8189d6826f7f1d1eb481db4/49fcd/assets/images/imagepng_0.jpg')
     ramen = Business(
-        userId = 3, name= "Marufuku Ramen", address= "4828 Telegraph Ave", city= "Oakland", state= "California", phone_number="(510) 823-2416", website="https://www.marufukuramen.com", imageURL= 'https://www.paloaltoonline.com/blogs/photos/12/4100.jpg')
+        userId = 3, name= "Marufuku Ramen", address= "4828 Telegraph Ave", city= "Oakland", state= "California", phone_number="5108232416", website="https://www.marufukuramen.com", imageURL= 'https://www.paloaltoonline.com/blogs/photos/12/4100.jpg')
 
     db.session.add(cane)
     db.session.add(hotboys)
