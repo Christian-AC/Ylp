@@ -19,8 +19,8 @@ const NavBar = () => {
                 <a className="feet" href="https://github.com/Christian-AC">
                    Made by: Christian Alcantara <AiFillGithub className="githubby" href="https://github.com/Christian-AC" />
                 </a>
-                <a className="feet" href="https://www.linkedin.com/in/christian-cayanan-48455a18a/">
-                    <AiFillLinkedin href="https://www.linkedin.com/in/christian-cayanan-48455a18a/"/>
+                <a className="feet" href="https://www.linkedin.com/in/christian-alcantara-cayanan/">
+                    <AiFillLinkedin href="https://www.linkedin.com/in/christian-alcantara-cayanan/"/>
                 </a>
             </div>
       </div>

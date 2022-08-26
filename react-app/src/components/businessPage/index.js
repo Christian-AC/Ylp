@@ -17,7 +17,6 @@ function BusinessPage() {
     const [isShown, setIsShown] = useState(false);
 
 
-
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
 
@@ -39,7 +38,7 @@ function BusinessPage() {
 
     const handleClick = event => {
         setIsShown(current => !current);
-      };
+    };
 
     useEffect(() => {
         dispatch(getReviewsThunk(business.id))
