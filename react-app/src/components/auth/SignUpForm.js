@@ -77,7 +77,7 @@ const SignUpForm = ({setShowModal}) => {
 
   if (user) {
     setShowModal(false)
-    return <Redirect to='/business' />;
+    return <Redirect to='/' />;
   }
 
   return (
