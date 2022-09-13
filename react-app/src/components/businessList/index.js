@@ -13,6 +13,7 @@ function BusinessList() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
 
@@ -24,8 +25,6 @@ function BusinessList() {
     useEffect(() => {
         dispatch(getAllBusinessThunk())
     }, [dispatch])
-
-
 
 
     return (

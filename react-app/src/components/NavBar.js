@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
-import { AiFillGithub,AiFillLinkedin } from 'react-icons/ai'
+import { AiFillGithub,AiFillLinkedin, AiOutlineSearch } from 'react-icons/ai'
 import CreateBusinessModal from './HomePage/createBusinessModal';
 import './NavBar.css'
 

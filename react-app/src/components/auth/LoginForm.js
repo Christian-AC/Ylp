@@ -18,7 +18,7 @@ const LoginForm = ({setShowModal}) => {
     if (data) {
       setErrors(data);
     }
-    return <Redirect to='/business'/>;
+    return <Redirect to='/'/>;
   };
 
   const updateEmail = (e) => {
@@ -37,12 +37,12 @@ const LoginForm = ({setShowModal}) => {
     if (data) {
       setErrors(data);
     }
-    return <Redirect to='/business'/>;
+    return <Redirect to='/'/>;
   };
 
   if (user) {
     // setShowModal(false)
-    return <Redirect to='/business'/>;
+    return <Redirect to='/'/>;
   }
 
 
