@@ -21,11 +21,12 @@
     background-image: url(./banner.jpg);
     /* background: 100%; */
     opacity: 0.8;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 .HomePage-Button {
