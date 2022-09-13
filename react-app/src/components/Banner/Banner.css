@@ -1,7 +1,7 @@
 .banner-container {
   height: 50vh;
   background-image: url("../Banner/banner.jpg");
-  opacity: 0.8;
+  opacity: 0.9;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -23,15 +23,15 @@
 }
 
 .banner-form-container {
-  display: grid;
-  grid-template-rows: 1fr 2.6fr;
+  display: flex;
+  justify-content: center;
   justify-items: center;
   width: 100%;
 }
 
 .banner-search-input {
   height: 45px;
-  width: 60%;
+  width: 50vh;
   border: none;
   box-sizing: border-box;
   padding: 10px;
