@@ -20,7 +20,7 @@
 .homepage-container {
     background-image: url(./banner.jpg);
     /* background: 100%; */
-    opacity: 0.8;
+    opacity: 0.85;
     height: 60vh;
     display: flex;
     flex-direction: column;
