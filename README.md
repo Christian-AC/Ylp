@@ -4,7 +4,7 @@ Ylp was builts as a clone of yelp. With Ylp you can add your own businesses or r
 # Technologies Used
 * Frontend: React
 * Backend: PostgreSQL, Python
-* Heroku(website hosting)
+* Heroku (website hosting)
 
 # Live Site Demo
 [DEMO LINK] (https://ylp-clone.herokuapp.com/)
