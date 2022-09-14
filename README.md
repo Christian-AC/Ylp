@@ -7,7 +7,7 @@ Ylp was builts as a clone of yelp. With Ylp you can add your own businesses or r
 * Heroku(website hosting)
 
 # Live Site Demo
-[DEMO LINK](https://ylp-clone.herokuapp.com/)
+[DEMO LINK] (https://ylp-clone.herokuapp.com/)
 
 # Installation
 Clone Ylp into your desired directory:
