@@ -91,7 +91,7 @@ function EditBusiness ({business, setShowModal}) {
         e.preventDefault()
         dispatch(deleteBusinessThunk(business.id));
         alert("Business Deleted successfully")
-        history.push(`/business`)
+        history.push(`/`)
     }
 
 

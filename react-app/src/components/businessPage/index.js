@@ -16,7 +16,6 @@ function BusinessPage() {
     const history = useHistory();
     const [isShown, setIsShown] = useState(false);
 
-
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
 
@@ -26,6 +25,10 @@ function BusinessPage() {
     const businessId = business.id;
     const userId = user.id
 
+    const formatPhone = (number) => {
+        return number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+    };
+
     const reviews = useSelector((state) => Object.values(state.review).filter(review => review.businessId === businessId))
 
     let rating = 0;
@@ -34,7 +37,6 @@ function BusinessPage() {
         ratings?.forEach((rate) => (rating = rate + rating));
         rating = (rating / ratings.length).toFixed(1)
     }
-
 
     const handleClick = event => {
         setIsShown(current => !current);
@@ -47,7 +49,7 @@ function BusinessPage() {
 
     return (
         <>
-            <div >
+            <d  iv >
                 <>
                 <div className="business-container">
                     <div className='top-container'>
@@ -107,7 +109,7 @@ function BusinessPage() {
                             <div className="info">
                             <h2>Phone Number</h2>
                             </div>
-                            <h3> <AiFillPhone/> {business.phone_number} </h3>
+                            <h3> <AiFillPhone/> {formatPhone(business.phone_number)} </h3>
                             <div className="info">
                             <h2>Website</h2>
                             <h3> {business.website} </h3>
@@ -116,7 +118,6 @@ function BusinessPage() {
                         </div>
                     </div>
                 </>
-
             </div>
         </>
         )

@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import { useHistory, NavLink, useParams } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
-import {AiFillPhone, AiOutlineCheck} from "react-icons/ai"
-import EditBusiness from '../editBusiness/index'
-import BusinessReviews from "../businessReviews";
+import {AiFillPhone} from "react-icons/ai"
+import {FaDirections} from "react-icons/fa"
 import StarComponet from "./starcomponet";
 import './businessList.css'
 
@@ -13,11 +12,8 @@ function BusinessList() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
-
-
 
     const user = useSelector((state) => state.session.user)
     const businesses = useSelector((state) => Object.values(state.business))
@@ -26,34 +22,37 @@ function BusinessList() {
         dispatch(getAllBusinessThunk())
     }, [dispatch])
 
+    const formatPhone = (number) => {
+        return number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+    };
 
     return (
-        <div className="whole-container">
-            <div>
-                <h1 className='business-list-header'>Browsing Businesses:</h1>
-            </div>
+        <>
+        <h1 className='business-list-header'>Your Next Review Awaits</h1>
             <div className="business-list-container" >
                     <>
                     {businesses.map((business) =>{
                         return(
-                            <div className='business-list'>
-                                <div className='business-list-top'>
-                                <img alt='business-logo-list' src={business.imageURL} className='business-logo-list'/>
-                                    <div className='name-and-stars'>
-                                        <NavLink className='link' to={`/business/${business.id}`}><h2 className='business-name'> {business.name} </h2></NavLink>
-                                        <StarComponet business={business}/>
+                            <NavLink className='link' to={`/business/${business.id}`}>
+                                <div className='business-list' >
+                                    <img alt='business-logo-list' src={business.imageURL} className='business-logo-list'/>
+                                    <div className='business-list-data'>
+                                        <div className='name-and-stars'>
+                                            <h2 className='business-name'> {business.name} </h2>
+                                            <StarComponet business={business}/>
+                                        </div>
+                                        <div className='business-list-bottom'>
+                                            <h2> <AiFillPhone/> {formatPhone(business.phone_number)} </h2>
+                                            <h2> <FaDirections/> {business.address} {business.city}, {business.state} </h2>
+                                        </div>
                                     </div>
                                 </div>
-                                <h3> {business.address} </h3>
-                                <h3> {business.city}, {business.state} </h3>
-                                <h3> <AiFillPhone/> {business.phone_number} </h3>
-                                <h3> {business.website} </h3>
-                            </div>
-                         )
+                            </NavLink>
+                        )
                     })}
                     </>
             </div>
-        </div>
+        </>
         )
 }
 export default BusinessList;

@@ -13,13 +13,13 @@
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
-  font-family:helvetica;
+  font-family: system-ui;
   align-items: center;
   justify-content:space-evenly;
 }
 
 #footer{
-  font-family:helvetica;
+  font-family: system-ui;
   position: fixed;
   left: 0px;
   right: 0px;
@@ -30,11 +30,11 @@
 
 .each{
   padding:15px;
-  font-family:helvetica;
+  font-family: system-ui;
 }
 .feet{
   /* margin-right:10px; */
-  /* font-family:helvetica;
+  /* font-family: system-ui;
   text-decoration:none;
   color:white;
   padding:10px;

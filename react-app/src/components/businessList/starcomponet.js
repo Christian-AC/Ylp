@@ -30,10 +30,10 @@ function StarComponet({business}) {
 
     return (
         <>
-            <div className='star-component'>
+            {/* <div className='star-component'> */}
                 <h3 className='rating'>{rating}<img width ='12' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h3>
-                <h3 className='reviews-star'>{reviews.length} reviews</h3>
-            </div>
+                {/* <h3 className='reviews-star'>{reviews.length} reviews</h3> */}
+            {/* </div> */}
         </>
         )
 }

@@ -7,7 +7,7 @@ function CreateBusinessModal({}) {
 
     return (
       <>
-        <button className="Create-Business" onClick={() => setShowModal(true)}>Create Business</button>
+        <button className="Create-Business" onClick={() => setShowModal(true)}>Add a Business!</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
             <CreateBusiness  setShowModal={setShowModal}/>

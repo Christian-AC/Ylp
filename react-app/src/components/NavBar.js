@@ -26,9 +26,9 @@ const NavBar = () => {
       </div>
       {sessionUser && (
         <div className="navbar-button-container" >
-          <NavLink to='/business' exact={true} activeClassName='active'>
+          {/* <NavLink to='/business' exact={true} activeClassName='active'>
             <button className="Browse-Button">Browse Businesses</button>
-          </NavLink>
+          // </NavLink> */}
           <CreateBusinessModal/>
           <LogoutButton />
         </div>

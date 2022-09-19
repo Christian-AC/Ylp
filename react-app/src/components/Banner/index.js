@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa'
+import BusinessList from "../businessList";
 
 import "./Banner.css";
 import { useState } from "react";
@@ -18,6 +19,7 @@ function Banner() {
     }
   };
   return (
+    <>
     <div className="banner-container">
       <div className="banner-content">
         <div className="banner-logo-container">
@@ -43,6 +45,9 @@ function Banner() {
         </div>
       </div>
     </div>
+    <BusinessList/>
+    </>
+
   );
 }
 

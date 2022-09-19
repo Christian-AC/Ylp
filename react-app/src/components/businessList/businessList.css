@@ -1,52 +1,45 @@
-.whole-container{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: 70%;
-    background-color: rgb(247, 241, 233);
-    box-shadow: 10px 5px 5px rgb(205, 205, 205);
-    border-radius: 5%;
-}
-
 .business-list-container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 1200px;
-    width: 40vh;
-    padding-left: 20px;
-    /* align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 100px;
 }
 
 .business-logo-list{
-    width: 90px;
-    height: 90px;
-    border: 1px solid white;
-    border-radius: 50%;
+    width: 170px;
+    height: 170px;
 }
 
-.business-list-top{
+.business-list-data{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    /* justify-content: space-between */
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+    /* align-items: flex-start; */
 }
 .name-and-stars{
     display: flex;
-    flex-direction: column;
-    padding-left: 30px;
+    flex-direction: row;
+    justify-content:space-between;
 }
 
 .business-list{
-    width: 370px;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
     border: 1px solid rgb(198, 198, 198);
     background-color: rgb(243, 242, 242);
     margin: 20px;
     box-shadow: 10px 5px 5px rgb(205, 205, 205);
-    /* padding-left: 20px; */
+    height: 170px;
 }
+
+.business-list:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.415);
+  }
 
 .link{
     /* text-decoration: none; */
@@ -54,21 +47,21 @@
 }
 
 .business-list-header{
-    font-family:helvetica;
+    font-family: system-ui;
     font-size: 30px;
     margin: auto;
     margin-top: 5%;
     padding: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 
-.star-component{
+/* .star-component{
     display: flex;
     flex-direction: row;
     height: 15px;
-
-}
+} */
 
 .business-name{
     font-size: 20px;

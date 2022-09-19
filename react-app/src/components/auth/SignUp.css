@@ -14,7 +14,7 @@
     margin-bottom: 2px;
     border:1px solid rgb(235, 235, 235);
     outline:none;
-    font-family:Helvetica;
+    font-family: system-ui;
     margin-left:44px;
     margin-right:10px;
     margin-top:20px
@@ -26,7 +26,7 @@
     margin-bottom: 2px;
     border:1px solid rgb(235, 235, 235);
     outline:none;
-    font-family:Helvetica;
+    font-family: system-ui;
     margin-left:95px;
     margin-right:10px;
     margin-top:20px
@@ -38,7 +38,7 @@
     margin-bottom: 2px;
     border:1px solid rgb(235, 235, 235);
     outline:none;
-    font-family:Helvetica;
+    font-family: system-ui;
     margin-left:59px;
     margin-right:10px;
     margin-top:20px
@@ -50,7 +50,7 @@
     margin-bottom: 2px;
     border:1px solid rgb(235, 235, 235);
     outline:none;
-    font-family:Helvetica;
+    font-family: system-ui;
     margin-left:17px;
     padding-left: 10px;
     margin-right:35px;
@@ -59,7 +59,7 @@
 
 body {
     background-color:#f7f7f7;
-    font-family: Helvetica;
+    font-family: system-ui;
     font-size:11px;
     padding:none;
     margin:-.5px
