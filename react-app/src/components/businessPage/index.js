@@ -49,7 +49,7 @@ function BusinessPage() {
 
     return (
         <>
-            <d  iv >
+            <div >
                 <>
                 <div className="business-container">
                     <div className='top-container'>
