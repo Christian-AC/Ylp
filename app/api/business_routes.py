@@ -4,6 +4,7 @@ from app.models import Business, db
 from app.forms.business_form import BusinessForm
 
 business_routes = Blueprint('business', __name__)
+search_routes = Blueprint('search', __name__)
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -14,6 +15,12 @@ def validation_errors_to_error_messages(validation_errors):
         for error in validation_errors[field]:
             errorMessages.append(f'{error}')
     return errorMessages
+
+#Search method
+@search_routes.route('/search', methods=['POST'])
+def search():
+    pass
+
 
 
 @business_routes.route('')
