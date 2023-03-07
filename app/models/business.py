@@ -11,8 +11,6 @@ class Business(db.Model):
     userId = db.Column(db.Integer,db.ForeignKey("users.id"), nullable=False)
     name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(355), nullable=False)
-    lat = db.Column(db.String(355), nullable=False)
-    lng = db.Column(db.String(355), nullable=False)
     zipCode = db.Column(db.String(10), nullable=False)
     phone_number = db.Column(db.String(40), nullable=False)
     website = db.Column(db.String(80), nullable=False)
@@ -28,8 +26,6 @@ class Business(db.Model):
             'user': self.userIds.to_dict(),
             'name': self.name,
             'address': self.address,
-            'lat': self.lat,
-            'lng': self.lng,
             'zipCode': self.zipCode,
             'phone_number': self.phone_number,
             'website': self.website,

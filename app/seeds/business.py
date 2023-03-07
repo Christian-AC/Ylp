@@ -9,8 +9,6 @@ def seed_businesses():
         address= "8430 Edgewater Dr Oakland, CA 94621",
         zipCode='94621',
         phone_number="5105425872",
-        lat='37.744621',
-        lng='-122.206404',
         website="https://www.raisingcanes.com",
         imageURL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Raising_Cane%27s_Chicken_Fingers_logo.svg/1200px-Raising_Cane%27s_Chicken_Fingers_logo.svg.png')
     hotboys = Business(
@@ -19,8 +17,6 @@ def seed_businesses():
         address= "1601 San Pablo Ave Oakland, CA 94612",
         zipCode= "94612",
         phone_number="5108884892",
-        lat='37.804485',
-        lng='-122.271187',
         website="https://www.worldfamoushotboys.com/",
         imageURL = 'https://d33wubrfki0l68.cloudfront.net/706299a920cdcd72a8189d6826f7f1d1eb481db4/49fcd/assets/images/imagepng_0.jpg')
     ramen = Business(
@@ -29,8 +25,6 @@ def seed_businesses():
         address= "4828 Telegraph Ave Oakland, CA 94612",
         zipCode= "94609",
         phone_number="5108232416",
-        lat='37.835316',
-        lng='-122.262986',
         website="https://www.marufukuramen.com",
         imageURL= 'https://www.paloaltoonline.com/blogs/photos/12/4100.jpg')
 

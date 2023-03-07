@@ -45,8 +45,7 @@ def post_business():
             userId=form.data['userId'],
             name=form.data['name'],
             address=form.data['address'],
-            city=form.data['city'],
-            state=form.data['state'],
+            zipCode=form.data['zipCode'],
             phone_number=form.data['phone_number'],
             website=form.data['website'],
             imageURL=form.data['imageURL']
@@ -66,8 +65,7 @@ def put_business(id):
         data = request.json
         business.name=data['name'],
         business.address=data['address'],
-        business.city=data['city'],
-        business.state=data['state'],
+        business.zipCode=data['zipCode'],
         business.phone_number=data['phone_number'],
         business.website=data['website'],
         business.imageURL=data['imageURL']

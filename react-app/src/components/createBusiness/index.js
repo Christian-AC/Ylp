@@ -17,16 +17,14 @@ function CreateBusiness({setShowModal}) {
     const [errors, setErrors] = useState(errorsObj);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
+    const [zipCode, setZipcode] = useState("");
     const [phone_number, setPhoneNumber] = useState("");
     const [website, setWebsite] = useState("");
     const [imageURL, setimageURL] = useState("");
 
     const updateName = (e) => setName(e.target.value)
     const updateAddress = (e) => setAddress(e.target.value)
-    const updateCity = (e) => setCity(e.target.value)
-    const updateState = (e) => setState(e.target.value)
+    const updateZipcode = (e) => setZipcode(e.target.value)
     const updatePhoneNumber = (e) => setPhoneNumber(e.target.value)
     const updateWebsite = (e) => setWebsite(e.target.value)
     const updateImageURL = (e) => setimageURL(e.target.value)
@@ -46,13 +44,7 @@ function CreateBusiness({setShowModal}) {
       } else if (address.length < 4 || address.length > 25) {
         errorsObj.address = "Address must be longer than 4 characters and shorter than 25";
         error = true;
-      } else if (city === '') {
-        errorsObj.city = "City is required"
-        error = true;
-      }else if (state === '') {
-        errorsObj.state = "State is required"
-        error = true;
-      }else if (phone_number === '') {
+      } else if (phone_number === '') {
         errorsObj.phone_number = "Phone # is required"
         error = true;
       }else if (phone_number.length !== 10 ) {
@@ -77,8 +69,7 @@ function CreateBusiness({setShowModal}) {
             userId,
             name,
             address,
-            city,
-            state,
+            zipCode,
             phone_number,
             website,
             imageURL
@@ -104,12 +95,8 @@ function CreateBusiness({setShowModal}) {
             <input className='address-form' type='text' value={address} placeholder='address' onChange={updateAddress} required/>
           </div>
           <div>
-            <label>City</label>
-            <input className='city-form' type='text' value={city} placeholder='city' onChange={updateCity} required/>
-          </div>
-          <div>
-            <label>State</label>
-            <input className ='state-form' type='text' value={state} placeholder='state' onChange={updateState} required/>
+            <label>Zip Code</label>
+            <input className='city-form' type='text' value={zipCode} placeholder='zipCode' onChange={updateZipcode} required/>
           </div>
           <div>
             <label>Phone #</label>
