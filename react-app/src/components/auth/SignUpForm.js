@@ -25,7 +25,7 @@ const SignUpForm = ({setShowModal}) => {
     if(username === '') {
       errorsObj.username = "Requires username!";
       error = true;
-    } else if (username.length < 5 || username.length > 20) {
+    } else if (username.length < 3 || username.length > 20) {
       errorsObj.username = "Usernames must be longer than 5 characters and shorter than 20.";
       error = true;
     }
