@@ -10,9 +10,10 @@ class Business(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer,db.ForeignKey("users.id"), nullable=False)
     name = db.Column(db.String(100), nullable=False)
-    address = db.Column(db.String(200), nullable=False)
-    city = db.Column(db.String(30), nullable=False)
-    state = db.Column(db.String(30), nullable=False)
+    address = db.Column(db.String(355), nullable=False)
+    lat = db.Column(db.String(355), nullable=False)
+    lng = db.Column(db.String(355), nullable=False)
+    zipCode = db.Column(db.String(10), nullable=False)
     phone_number = db.Column(db.String(40), nullable=False)
     website = db.Column(db.String(80), nullable=False)
     imageURL = db.Column(db.String(255))
@@ -27,8 +28,9 @@ class Business(db.Model):
             'user': self.userIds.to_dict(),
             'name': self.name,
             'address': self.address,
-            'city': self.city,
-            'state': self.state,
+            'lat': self.lat,
+            'lng': self.lng,
+            'zipCode': self.zipCode,
             'phone_number': self.phone_number,
             'website': self.website,
             'imageURL': self.imageURL
