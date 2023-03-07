@@ -9,6 +9,7 @@ import BusinessReviews from "../businessReviews";
 import CreateReviewModal from "../createReview/CreateReviewModal";
 import MapPageA from "../googleMap";
 
+
 import './businessPage.css';
 
 
@@ -25,6 +26,7 @@ function BusinessPage() {
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
     const businessId = business.id;
     const userId = user.id
+    const key = process.env.REACT_APP_MAPS_KEY
 
     const formatPhone = (number) => {
         return number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
@@ -75,8 +77,29 @@ function BusinessPage() {
                     </div>
                     <div className="business-page-bottom">
                         <div>
+                            <div className='hours'>
+                                <h2 className='titles'>Location and Hours</h2>
+                                <div className='map-and-hours'>
+                                    <iframe
+                                    loading="lazy"
+                                    className="google-map"
+                                    title="location-map"
+                                    src={`https://www.google.com/maps/embed/v1/place?key=${key}
+                                            &q=${business["address"]},${business["city"]}+${business["state"]}`}
+                                    ></iframe>
+                                    <div className='hour-container'>
+                                        <h3> Mon 11:00 AM - 9:00 PM</h3>
+                                        <h3> Tues 11:00 AM - 9:00 PM</h3>
+                                        <h3> Wed 11:00 AM - 9:00 PM</h3>
+                                        <h3> Thur 11:00 AM - 9:00 PM</h3>
+                                        <h3> Fri 11:00 AM - 9:00 PM</h3>
+                                        <h3> Sat 11:00 AM - 9:00 PM </h3>
+                                        <h3> Sun 11:00 AM - 9:00 PM</h3>
+                                    </div>
+                                </div>
+                            </div>
                             <div className='amenities'>
-                                <h2>Amenities and More</h2>
+                                <h2 className='titles'>Amenities and More</h2>
                                 <div className='Amenities-container'>
                                     <h3> <AiOutlineCheck/> Accepts Credit Cards</h3>
                                     <h3> <AiOutlineCheck/> Accepts Apple Pay</h3>
@@ -84,18 +107,6 @@ function BusinessPage() {
                                     <h3> <AiOutlineCheck/>  Wifi</h3>
                                     <h3> <AiOutlineCheck/> Moderate Noise</h3>
                                     <h3> <AiOutlineCheck/> Good for Groups</h3>
-                                </div>
-                            </div>
-                            <div className='hours'>
-                                <h2>Hours</h2>
-                                <div className='hour-container'>
-                                    <h3> Mon 11:00 AM - 9:00 PM</h3>
-                                    <h3> Tues 11:00 AM - 9:00 PM</h3>
-                                    <h3> Wed 11:00 AM - 9:00 PM</h3>
-                                    <h3> Thur 11:00 AM - 9:00 PM</h3>
-                                    <h3> Fri 11:00 AM - 9:00 PM</h3>
-                                    <h3> Sat 11:00 AM - 9:00 PM </h3>
-                                    <h3> Sun 11:00 AM - 9:00 PM</h3>
                                 </div>
                             </div>
                             <BusinessReviews business={business}/>
@@ -118,10 +129,8 @@ function BusinessPage() {
                         </div>
                         </div>
                     </div>
-                    <MapPageA></MapPageA>
                 </>
             </div>
-
         </>
         )
 }

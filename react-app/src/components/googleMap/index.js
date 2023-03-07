@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import Geocode from 'react-geocode'
 
 
-
-const MapPageA= () => {
+const MapPageA= ({address}) => {
 
 
 //This sets the center of the map. This must be set BEFORE the map loads
@@ -14,37 +14,79 @@ const [currentPosition, setCurrentPosition] = useState({lat:43.11016617798622,ln
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.KEY
+    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
   })
 
+//This is of course not the raw key but either from getting it from the backend and storing it in redux or in your frontend .env
 
-  const containerStyle = {
-    width: '800px',
-    height: '800px'
+Geocode.setApiKey(process.env.REACT_APP_MAPS_KEY);
+
+// set response language. Defaults to english.
+Geocode.setLanguage("en");
+
+Geocode.setLocationType("ROOFTOP");
+
+// Enable or disable logs. Its optional.
+Geocode.enableDebug();
+
+
+// Get latitude & longitude from address
+const makeMap = async (e) => {
+    e.preventDefault()
+    Geocode.fromAddress(address).then(
+        (response) => {
+          const {lat, lng} = response.results[0].geometry.location
+          setCurrentPosition({lat, lng})
+
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+}
+
+
+const containerStyle = {
+    width: '350px',
+    height: '350px'
   };
 
-  const [map, setMap] = useState(null)
+const [map, setMap] = useState(null)
 
-  const onUnmount = useCallback(function callback(map) {
+const onUnmount = useCallback(function callback(map) {
     setMap(null)
+
   }, [])
+
+  console.log("------",currentPosition)
+
 
 
     return (
-      // Important! Always set the container height explicitly
-
       <div className="map_page__container">
+        {isLoaded && currentPosition ?<GoogleMap
+          mapContainerStyle={containerStyle}
+          zoom={12}
+          center={currentPosition}
+          onUnmount={onUnmount}
+          >
 
-        <div style={{ height: '900px', width: '900px' }}>
-            {isLoaded && <GoogleMap
-              mapContainerStyle={containerStyle}
-              zoom={8}
-              center={currentPosition}
-              onUnmount={onUnmount}
-              >
-            </GoogleMap>}
-        </div>
+              <>
+              <Marker
+              position={{lat:currentPosition.lat, lng:currentPosition.lng}}
+              icon={{
+                path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+                // fillColor: color,
+                fillOpacity: 1,
+                scale: .2,
+                strokeColor: 'gold',
+                strokeWeight: 2
+              }}
+              streetView={false} >
+              </Marker>
 
+             </>
+        </GoogleMap>:null}
       </div>
     );
 

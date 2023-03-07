@@ -30,7 +30,7 @@ function BusinessReviews({business}) {
 
     return (
         <div className="review-container">
-          <h1 className='review-title'>Reviews</h1>
+          <h1 className='titles'>Reviews</h1>
           {sortedReviews.map((review) =>{
               return(
                   <>

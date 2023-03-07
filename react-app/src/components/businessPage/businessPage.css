@@ -6,7 +6,7 @@
     margin-top: 9%;
     margin-left: 20%;
     width: 60%;
-    background-color: rgb(247, 241, 233);
+    /* background-color: rgb(247, 241, 233); */
     box-shadow: 10px 5px 5px rgb(205, 205, 205);
     border-radius: 5%;
 }
@@ -19,19 +19,20 @@
 .business-name-page{
     display: flex;
     font-size: 45px;
-    margin-bottom:10px;
+    margin-bottom: 0px;
+    height: 75px;
 }
 
 .name-and-stars{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .top-container{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
+    width: 80%;
     border-bottom: 1px solid black;
     padding-left: 30px;
 }
@@ -39,8 +40,7 @@
 .rating-container{
     display: flex;
     flex-direction: row;
-    /* margin-left: 30px; */
-    /* padding-left: 30px; */
+
 }
 .business-buttons{
     display: flex;
@@ -97,4 +97,19 @@
 
 .hours{
     border-top: 1px solid rgb(198, 198, 198);
+}
+
+.google-map{
+    width: 450px;
+    height: 300px;
+    margin-right: 25px;
+}
+
+.map-and-hours{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titles{
+    font-size: 25px;
 }
