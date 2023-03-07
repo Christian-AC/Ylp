@@ -7,6 +7,7 @@ import { getReviewsThunk } from "../../store/review";
 import EditBusinessModal from '../editBusiness/editBusinessModal'
 import BusinessReviews from "../businessReviews";
 import CreateReviewModal from "../createReview/CreateReviewModal";
+import MapPageA from "../googleMap";
 
 import './businessPage.css';
 
@@ -117,8 +118,10 @@ function BusinessPage() {
                         </div>
                         </div>
                     </div>
+                    <MapPageA></MapPageA>
                 </>
             </div>
+
         </>
         )
 }

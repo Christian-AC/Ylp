@@ -20,12 +20,9 @@ function App() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
-  useEffect(() => {
-    dispatch(getAllBusinessThunk())
-  })
-
 	useEffect(() => {
 		(async () => {
+      await dispatch(getAllBusinessThunk())
 			await dispatch(authenticate());
 			setLoaded(true);
 		})();
