@@ -13,8 +13,7 @@ import CreateBusiness from './components/createBusiness';
 import { getAllBusinessThunk } from './store/business';
 import BusinessList from './components/businessList'
 import HomePage from './components/HomePage'
-import Footer from "./components/Footer";
-import Banner from "./components/Banner"
+import SearchPage from './components/Search';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,12 +21,15 @@ function App() {
   const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
-    (async() => {
-      await dispatch(getAllBusinessThunk());
-      await dispatch(authenticate());
-      setLoaded(true);
-    })();
-  }, [dispatch]);
+    dispatch(getAllBusinessThunk())
+  })
+
+	useEffect(() => {
+		(async () => {
+			await dispatch(authenticate());
+			setLoaded(true);
+		})();
+	}, [dispatch]);
 
   if (!loaded) {
     return null;
@@ -62,6 +64,9 @@ function App() {
         <Route path='/' exact={true} >
           <HomePage/>
         </Route>
+        <Route path="/search/:searchValue" exact={true}>
+					<SearchPage />
+				</Route>
       </Switch>
     </BrowserRouter>
     </>
