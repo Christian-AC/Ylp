@@ -1,3 +1,26 @@
+.business-form{
+    background-color: rgb(255, 255, 255);
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+.create-title{
+    text-align: center;
+}
+
+.create-div{
+    text-align: left;
+}
+
+.input-form{
+    border:1px solid rgb(235, 235, 235);
+}
+
 .Create-Business {
     display:inline-block;
     padding:0.25em 1em;
@@ -20,99 +43,4 @@
     margin-right: 7px;
     margin-top:10px;
     margin-bottom: 15px;
-}
-
-.business-form{
-    background-color: rgb(255, 255, 255);
-    display: block;
-    width: 300px;
-    height: auto;
-    margin: auto;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.name-form {
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:45px;
-    margin-right:10px;
-    margin-top:20px
-
-}
-
-.address-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:27px;
-    margin-right:10px;
-    margin-top:20px
-}
-
-.city-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:65px;
-    margin-right:10px;
-    margin-top:20px
-}
-
-.state-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:55px;
-    margin-right:10px;
-    margin-top:20px
-}
-
-.phone-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:30px;
-    margin-right:10px;
-    margin-top:20px
-}
-
-.website-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family: system-ui;
-    margin-left:30px;
-    margin-right:9px;
-    margin-top:20px
-}
-
-.logo-form{
-    padding:12px;
-    font-size:12px;
-    margin-bottom: 2px;
-    border:1px solid rgb(235, 235, 235);
-    outline:none;
-    font-family:Helvetica;
-    margin-left:4px;
-    margin-right:14px;
-    margin-top:20px
 }

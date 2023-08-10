@@ -14,12 +14,12 @@ const [currentPosition, setCurrentPosition] = useState({lat:43.11016617798622,ln
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
+    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
   })
 
 //This is of course not the raw key but either from getting it from the backend and storing it in redux or in your frontend .env
 
-Geocode.setApiKey('AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s');
+Geocode.setApiKey(process.env.REACT_APP_MAPS_KEY);
 
 // set response language. Defaults to english.
 Geocode.setLanguage("en");

@@ -83,32 +83,32 @@ function CreateBusiness({setShowModal}) {
       return (<>
       <div>
       </div>
-            <h2>Add your business!</h2>
+            <h2 className='create-title'>Add your business!</h2>
         <form className='business-form' onSubmit={handleSubmit}>
           {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
-          <div>
-          <label>Name</label>
-            <input className='name-form' type='text' value={name} placeholder='Business name' onChange={updateName} required/>
+          <div className='create-div'>
+            <label className='create-label'>Name</label>
+            <input className='input-form' type='text' value={name} placeholder='Business name' onChange={updateName} required/>
           </div>
-          <div>
-            <label>Address</label>
-            <input className='address-form' type='text' value={address} placeholder='address' onChange={updateAddress} required/>
+          <div className='create-div'>
+            <label className='create-label'>Address</label>
+            <input className='input-form' type='text' value={address} placeholder='Address' onChange={updateAddress} required/>
           </div>
-          <div>
-            <label>Zip Code</label>
-            <input className='city-form' type='text' value={zipCode} placeholder='zipCode' onChange={updateZipcode} required/>
+          <div className='create-div'>
+            <label className='create-label'>Zip Code</label>
+            <input className='input-form' type='text' value={zipCode} placeholder='Zip Code' onChange={updateZipcode} required/>
           </div>
-          <div>
-            <label>Phone #</label>
-            <input className = 'phone-form' type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber} required/>
+          <div className='create-div'>
+            <label className='create-label'>Phone #</label>
+            <input className = 'input-form' type='text' value={phone_number} placeholder='Phone #' onChange={updatePhoneNumber} required/>
           </div>
-          <div>
-            <label>Website</label>
-            <input className = 'website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required/>
+          <div className='create-div'>
+            <label className='create-label'>Website</label>
+            <input className = 'input-form' type='text' value={website} placeholder='URL' onChange={updateWebsite} required/>
           </div>
-          <div>
-            <label>Logo Image</label>
-            <input className = 'logo-form' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required/>
+          <div className='create-div'>
+            <label className='create-label'>Logo Image</label>
+            <input className = 'input-form' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required/>
           </div>
             <button className="Create-Business" type="submit">Post</button>
         </form>
