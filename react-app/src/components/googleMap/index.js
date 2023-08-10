@@ -5,7 +5,7 @@ import Geocode from 'react-geocode'
 
 const MapPageA= ({address}) => {
 
-key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
+const key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
 //This sets the center of the map. This must be set BEFORE the map loads
 
 const [currentPosition, setCurrentPosition] = useState({lat:43.11016617798622,lng:-89.48826131670266})
