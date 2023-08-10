@@ -16,7 +16,7 @@ Clone Ylp into your desired directory:
 * create an `.env` file in the root of the directory and refer to the `.env.example` file provided for you
 * refer to [SEQUELIZE DOCUMENTATION](https://sequelize.org/docs/v6/other-topics/migrations/) on how to create a database
 * to run the app in development mode `CD` into the root directory and `flask run` (make sure you ran `pipenv shell`)
-* next `CD` into `react-app` (frontend) and npm start, wait a minute for the localhost to start up, and you have Polagram up and running!
+* next `CD` into `react-app` (frontend) and npm start, wait a minute for the localhost to start up, and you have Ylp up and running!
 
 # Wiki Docs
 
