@@ -1,50 +1,59 @@
-.loginform {
+/* Container */
+.login-form-container {
+    width: 295px;
+    height: 296px;
+}
+/* Top */
+.loginform-top {
+    display: flex;
+    flex-direction: column;
+}
+
+
+h2.loginform-text-intro {
+    color: red;
+    text-align: center;
+    padding-top: 5px;
+}
+
+h3.loginform-text-new {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Form/inputs */
+.loginform-form {
     background-color: rgb(255, 255, 255);
-    display: block;
+    display: flex;
     width: auto;
     height: auto;
     margin: auto;
     text-align: left;
-    padding: 15px;
 }
 
+.loginform-input-container{
+    padding-left: 10px;
+}
 
-.loginform-top {
+.loginform-inputs {
+    border: none;
+    border-bottom: 1px solid red;
+    padding-left: 5px;
+}
+
+/* Buttons */
+.signup-button-container {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-
-h2.loginform-text {
-    color: Black;
-    text-align: center;
-}
-
-h3.loginform-text {
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-
-.login-form-container {
-    width: 295px;
-    height: 258px;
-}
-
-.emailform {
-
-}
-.password-sigup{
-
-}
-
-
-.loginbutton {
-    display:inline-block;
-    padding:0.25em 1em;
-    margin: 0 0.2em 0.2em 0;
-    border-radius:0.2em;
+.signup-bottons {
+    margin: 4px;
+    height: 34px;
+    border: red;
     text-decoration:none;
     font-weight: bold;
     font-family: system-ui;
@@ -55,8 +64,17 @@ h3.loginform-text {
     text-transform:uppercase;
     cursor:pointer;
     border:red;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin-top:10px;
-    margin-bottom: 15px;
+}
+
+.new-to-YLP {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    font-weight: bold;
+
+}
+
+.loginform-top {
+    display: flex;
+    flex-direction: column;
 }

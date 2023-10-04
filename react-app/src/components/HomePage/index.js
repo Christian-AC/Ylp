@@ -33,7 +33,6 @@ function HomePage() {
             {!sessionUser && (
                 <>
                 <LoginModal/>
-                 <SignupModal/>
                 </>
             )}
         </div>

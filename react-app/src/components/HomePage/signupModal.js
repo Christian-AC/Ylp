@@ -8,7 +8,7 @@ function SignupModal() {
 
     return (
       <>
-        <button className="HomePage-Button" onClick={() => setShowModal(true)}>Signup</button>
+        <button className="new-to-YLP" onClick={() => setShowModal(true)}>Sign up!</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
             <SignUpForm setShowModal={setShowModal}/>

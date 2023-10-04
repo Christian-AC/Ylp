@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect,useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
+import SignupModal from '../HomePage/signupModal';
 import './LoginForm.css'
 
 const LoginForm = ({setShowModal}) => {
@@ -49,39 +50,40 @@ const LoginForm = ({setShowModal}) => {
   return (
     <div className='login-form-container'>
       <div className="loginform-top">
-        <h2 className ='loginform-text'>Login to YLP</h2>
-        <h3 className ='loginform-text'>New to Ylp?</h3>
+        <h2 className='loginform-text-intro'>Login to YLP</h2>
       </div>
-      <form className="loginform" onSubmit={onLogin}>
+      <form className="loginform-form" onSubmit={onLogin}>
         <div>
           {errors.map((error, ind) => (
             <div className='errors' key={ind}>{error}</div>
           ))}
         </div>
-        <div>
-          <input className='emailform'
+        <div className='loginform-input-container'>
+          <input
+            className='loginform-inputs'
             name='email'
             type='text'
             placeholder='Email'
             value={email}
             onChange={updateEmail}
           />
-        </div>
-        <div>
           <input
-          className='password-sigup'
+            className='loginform-inputs'
             name='password'
             type='password'
             placeholder='Password'
             value={password}
             onChange={updatePassword}
           />
-          <div className='signup-button-container'>
-            <button type='submit' className="loginbutton">Login</button>
-            <button type='submit' className="loginbutton" onClick={demoUser}>Demo User</button>
-          </div>
+        </div>
+        <div className='signup-button-container'>
+          <button type='submit' className="signup-bottons">Login</button>
+          <button type='submit' className="signup-bottons" onClick={demoUser}>Demo User</button>
         </div>
       </form>
+      <div className="loginform-bottom">
+        <h3 className='loginform-text-new'>New to Ylp? <SignupModal/></h3>
+      </div>
     </div>
   );
 };
