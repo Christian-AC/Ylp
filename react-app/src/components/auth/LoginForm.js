@@ -47,7 +47,11 @@ const LoginForm = ({setShowModal}) => {
 
 
   return (
-    <div classname='login-form-container'>
+    <div className='login-form-container'>
+      <div className="loginform-top">
+        <h2 className ='loginform-text'>Login to YLP</h2>
+        <h3 className ='loginform-text'>New to Ylp?</h3>
+      </div>
       <form className="loginform" onSubmit={onLogin}>
         <div>
           {errors.map((error, ind) => (
@@ -55,7 +59,6 @@ const LoginForm = ({setShowModal}) => {
           ))}
         </div>
         <div>
-          <label htmlFor='email'>Email</label>
           <input className='emailform'
             name='email'
             type='text'
@@ -65,7 +68,6 @@ const LoginForm = ({setShowModal}) => {
           />
         </div>
         <div>
-          <label htmlFor='password'>Password</label>
           <input
           className='password-sigup'
             name='password'

@@ -16,7 +16,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.95);
 
 }
 
@@ -25,7 +25,7 @@
   color: black;
   font-size: 20px;
   background-color:rgb(255, 255, 255);
-  border-radius: 15px 50px 30px 5px;
+  /* border-radius: 15px 50px 30px 5px; */
 
 }
 
@@ -34,7 +34,7 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 15px 15px 15px 15px;
+  /* border-radius: 15px 15px 15px 15px; */
   margin: 30px;
 }
 input{
@@ -48,7 +48,7 @@ textarea{
 #login-button {
   margin-top: 10px;
   background-color: white;
-  border-radius: 15px 15px 15px 15px;
+  /* border-radius: 15px 15px 15px 15px; */
 }
 
 
