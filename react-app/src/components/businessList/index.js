@@ -41,10 +41,6 @@ function BusinessList() {
                                             <h2 className='business-name'> {business.name} </h2>
                                             <StarComponet business={business}/>
                                         </div>
-                                        <div className='business-list-bottom'>
-                                            <h2> <AiFillPhone/> {formatPhone(business.phone_number)} </h2>
-                                            <h2> <FaDirections/> {business.address} {business.city}, {business.state} </h2>
-                                        </div>
                                     </div>
                                 </div>
                             </NavLink>

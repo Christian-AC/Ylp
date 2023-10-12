@@ -4,7 +4,7 @@ import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
 import {AiFillPhone} from "react-icons/ai"
 import {FaDirections} from "react-icons/fa"
-import StarComponet from "./starcomponet";
+import StarComponet from "../businessList/starcomponet";
 
 
 
