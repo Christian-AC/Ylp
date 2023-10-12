@@ -54,79 +54,80 @@ function BusinessPage() {
         <>
             <div >
                 <>
-                <div className="business-container">
-                    <div className='top-container'>
-                        <img alt='business-logo' src={business.imageURL} className='business-logo'/>
-                        <div className="name-and-stars">
-                            <h5 className="business-name-page"> {business.name} </h5>
-                            <div className='rating-container'>
-                                <h2 className='rating'>{rating}<img width ='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png'/></h2>
-                                <h2 className='reviews'>{reviews.length} reviews</h2>
+                    <div className="business-container">
+                        <div className='top-container'>
+                            <img alt='business-logo' src={business.imageURL} className='business-logo' />
+                            <div className="name-rating-container">
+                                <h5 className="business-name-page"> {business.name} </h5>
+                                <div className='rating-container'>
+                                    <h2 className='rating'>{rating}<img width='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png' /></h2>
+                                    <h2 className='reviews'>{reviews.length} reviews</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='business-buttons'>
-                        <div>
-                            <CreateReviewModal business={business}/>
-                        </div>
-                        {business.user.id === user.id ? (
+                        <div className='business-buttons'>
                             <div>
-                            <EditBusinessModal business={business}/>
+                                <CreateReviewModal business={business} />
                             </div>
-                        ): null }
-                    </div>
-                    <div className="business-page-bottom">
-                        <div>
-                            <div className='hours'>
-                                <h2 className='titles'>Location and Hours</h2>
-                                <div className='map-and-hours'>
-                                    <iframe
-                                    loading="lazy"
-                                    className="google-map"
-                                    title="location-map"
-                                    src={`https://www.google.com/maps/embed/v1/place?key=${key}
+                            {business.user.id === user.id ? (
+                                <div>
+                                    <EditBusinessModal business={business} />
+                                </div>
+                            ) : null}
+                        </div>
+                        <div className="business-page-bottom">
+                            <div>
+                                <div className='hours'>
+                                    <h2 className='titles'>Location and Hours</h2>
+                                    <div className='map-and-hours'>
+                                        <iframe
+                                            frameBorder="0"
+                                            loading="lazy"
+                                            className="google-map"
+                                            title="location-map"
+                                            src={`https://www.google.com/maps/embed/v1/place?key=${key}
                                             &q=${business["address"]},${business["city"]}+${business["state"]}`}
-                                    ></iframe>
-                                    <div className='hour-container'>
-                                        <h3> Mon 11:00 AM - 9:00 PM</h3>
-                                        <h3> Tues 11:00 AM - 9:00 PM</h3>
-                                        <h3> Wed 11:00 AM - 9:00 PM</h3>
-                                        <h3> Thur 11:00 AM - 9:00 PM</h3>
-                                        <h3> Fri 11:00 AM - 9:00 PM</h3>
-                                        <h3> Sat 11:00 AM - 9:00 PM </h3>
-                                        <h3> Sun 11:00 AM - 9:00 PM</h3>
+                                        ></iframe>
+                                        <div className='hour-container'>
+                                            <h3> Mon 11:00 AM - 9:00 PM</h3>
+                                            <h3> Tues 11:00 AM - 9:00 PM</h3>
+                                            <h3> Wed 11:00 AM - 9:00 PM</h3>
+                                            <h3> Thur 11:00 AM - 9:00 PM</h3>
+                                            <h3> Fri 11:00 AM - 9:00 PM</h3>
+                                            <h3> Sat 11:00 AM - 9:00 PM </h3>
+                                            <h3> Sun 11:00 AM - 9:00 PM</h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className='amenities'>
+                                    <h2 className='titles'>Amenities and More</h2>
+                                    <div className='Amenities-container'>
+                                        <h3> <AiOutlineCheck /> Accepts Credit Cards</h3>
+                                        <h3> <AiOutlineCheck /> Accepts Apple Pay</h3>
+                                        <h3> <AiOutlineCheck /> Staff wears Masks</h3>
+                                        <h3> <AiOutlineCheck />  Wifi</h3>
+                                        <h3> <AiOutlineCheck /> Moderate Noise</h3>
+                                        <h3> <AiOutlineCheck /> Good for Groups</h3>
+                                    </div>
+                                </div>
+                                <BusinessReviews business={business} />
                             </div>
-                            <div className='amenities'>
-                                <h2 className='titles'>Amenities and More</h2>
-                                <div className='Amenities-container'>
-                                    <h3> <AiOutlineCheck/> Accepts Credit Cards</h3>
-                                    <h3> <AiOutlineCheck/> Accepts Apple Pay</h3>
-                                    <h3> <AiOutlineCheck/> Staff wears Masks</h3>
-                                    <h3> <AiOutlineCheck/>  Wifi</h3>
-                                    <h3> <AiOutlineCheck/> Moderate Noise</h3>
-                                    <h3> <AiOutlineCheck/> Good for Groups</h3>
+                            <div className="info-container">
+                                <h1>More Info</h1>
+                                <div className="info">
+                                    <h2>Address</h2>
+                                    <h3> {business.address} </h3>
+                                </div>
+                                <h3> {business.city}, {business.state} </h3>
+                                <div className="info">
+                                    <h2>Phone Number</h2>
+                                </div>
+                                <h3> <AiFillPhone /> {formatPhone(business.phone_number)} </h3>
+                                <div className="info">
+                                    <h2>Website</h2>
+                                    <h3> {business.website} </h3>
                                 </div>
                             </div>
-                            <BusinessReviews business={business}/>
-                        </div>
-                        <div className="info-container">
-                            <h1>More Info</h1>
-                            <div className="info">
-                            <h2>Address</h2>
-                            <h3> {business.address} </h3>
-                            </div>
-                            <h3> {business.city}, {business.state} </h3>
-                            <div className="info">
-                            <h2>Phone Number</h2>
-                            </div>
-                            <h3> <AiFillPhone/> {formatPhone(business.phone_number)} </h3>
-                            <div className="info">
-                            <h2>Website</h2>
-                            <h3> {business.website} </h3>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </>

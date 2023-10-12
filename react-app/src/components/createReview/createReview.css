@@ -1,69 +1,69 @@
-.review-form{
+.review-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.review-form-line{
+.review-form-line {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 10px;
 }
 
-.review-label{
+.review-label {
     margin-right: 10px;
 }
 
-.rating-label{
+.rating-label {
     margin-right: 19px;
 }
 
 .review-textarea {
-  width: 300px;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
+    width: 300px;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
 
 .review-select {
     /* padding: 6px 10px; */
     /* box-sizing: border-box; */
     border: 1px solid #ccc;
-    width:45px;
-    height:45px;
+    width: 45px;
+    height: 45px;
     border-radius: 1px;
     background-color: #f8f8f8;
     font-size: 15px;
     /* resize: none; */
-  }
+}
 
-  .Create-review {
+.Create-review {
     /* display:inline-block; */
-    padding:0.25em 1em;
+    padding: 0.25em 1em;
     margin: 0 0.2em 0.2em 0;
-    border-radius:0.2em;
-    text-decoration:none;
+    border-radius: 0.2em;
+    text-decoration: none;
     font-weight: bold;
-    font-family: system-ui;
-    font-size:12px;
-    color:white;
-    text-align:center;
-    background-color:red;
-    text-transform:uppercase;
-    cursor:pointer;
-    border:white 1px solid;
-    padding-bottom:10px;
-    padding-top:10px;
-    height:35px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: red;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: white 1px solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 35px;
     width: 150px;
     margin-right: 7px;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 15px;
     margin-left: 30%;
 }

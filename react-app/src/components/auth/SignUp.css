@@ -3,14 +3,14 @@
     margin-top: 40px;
     height: 34px;
     border: red;
-    text-decoration:none;
+    text-decoration: none;
     font-weight: bold;
-    font-family: system-ui;
-    font-size:12px;
-    color:white;
-    text-align:center;
-    background-color:red;
-    text-transform:uppercase;
-    cursor:pointer;
-    border:red;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: red;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: red;
 }

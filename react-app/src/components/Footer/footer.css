@@ -1,25 +1,25 @@
-#github{
-  background-color:white;
-  border-bottom:1px solid rgb(218, 218, 218);
+#github {
+  background-color: white;
+  border-bottom: 1px solid rgb(218, 218, 218);
   text-decoration: underline;
   font-size: 15px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-#footer-container{
+#footer-container {
   font-size: 10px;
-  background-color:red;
+  background-color: red;
   /* border-top:1px solid rgb(218, 218, 218); */
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
-  font-family: system-ui;
+  font-family: Arial, sans-serif;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
 
-#footer{
-  font-family: system-ui;
+#footer {
+  font-family: Arial, sans-serif;
   position: fixed;
   left: 0px;
   right: 0px;
@@ -28,13 +28,14 @@
 }
 
 
-.each{
-  padding:15px;
-  font-family: system-ui;
+.each {
+  padding: 15px;
+  font-family: Arial, sans-serif;
 }
-.feet{
+
+.feet {
   /* margin-right:10px; */
-  /* font-family: system-ui;
+  /* font-family: Arial, sans-serif;
   text-decoration:none;
   color:white;
   padding:10px;
@@ -42,7 +43,7 @@
   font-weight:lighter */
 }
 
-.githubby{
+.githubby {
   margin-left: 10px;
   /* margin-right:10px; */
 }

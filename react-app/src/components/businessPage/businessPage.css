@@ -1,33 +1,14 @@
-
+/* Business Page */
 .business-container{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     margin-top: 9%;
     margin-left: 20%;
     width: 60%;
-    /* background-color: rgb(247, 241, 233); */
-    box-shadow: 10px 5px 5px rgb(205, 205, 205);
     border-radius: 5%;
 }
-.business-logo{
-    width: 210px;
-    height: 210px;
-    border: 1px solid white;
-    border-radius: 50%;
-}
-.business-name-page{
-    display: flex;
-    font-size: 45px;
-    margin-bottom: 0px;
-    height: 75px;
-}
 
-.name-and-stars{
-    display: flex;
-    flex-direction: column;
-}
-
+/* top of business page  */
 .top-container{
     margin-top: 100px;
     display: flex;
@@ -36,6 +17,22 @@
     border-bottom: 1px solid black;
     padding-left: 30px;
 }
+.business-logo{
+    width: 210px;
+    height: 210px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.business-name-page{
+    font-size: 45px;
+    margin-bottom: 0px;
+    height: 75px;
+}
+.name-rating-container{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .rating-container{
     display: flex;
@@ -100,9 +97,10 @@
 }
 
 .google-map{
-    width: 450px;
-    height: 300px;
+    width: 250px;
+    height: 150px;
     margin-right: 25px;
+
 }
 
 .map-and-hours{
