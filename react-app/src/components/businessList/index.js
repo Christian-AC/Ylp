@@ -43,7 +43,7 @@ function BusinessList() {
                                         </div>
                                         <div className='business-list-bottom'>
                                             <h2> <AiFillPhone/> {formatPhone(business.phone_number)} </h2>
-                                            <h2> <FaDirections/> {business.address} {business.city} </h2>
+                                            <h2> <FaDirections/> {business.address} {business.city}, {business.state} </h2>
                                         </div>
                                     </div>
                                 </div>

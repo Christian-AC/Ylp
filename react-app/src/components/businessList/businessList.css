@@ -67,3 +67,9 @@
 .business-name {
     font-size: 20px;
 }
+
+.biz-star-rating,
+.all-biz-star-rating {
+	width: 100px;
+	height: 25px;
+}

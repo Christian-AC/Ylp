@@ -8,6 +8,17 @@ import EditBusinessModal from '../editBusiness/editBusinessModal'
 import BusinessReviews from "../businessReviews";
 import CreateReviewModal from "../createReview/CreateReviewModal";
 import MapPageA from "../googleMap";
+import zeroStars from "../assets/0-stars.png";
+import oneStars from "../assets/1-stars.png";
+import twoStars from "../assets/2-stars.png";
+import threeStars from "../assets/3-stars.png";
+import fourStars from "../assets/4-stars.png";
+import fiveStars from "../assets/5-stars.png";
+import oneandOneHalfStars from "../assets/1.5-stars.png";
+import twoandOneHalfStars from "../assets/2.5-stars.png";
+import threeandOneHalfStars from "../assets/3.5-stars.png";
+import fourandOneHalfStars from "../assets/4.5-stars.png";
+
 
 
 import './businessPage.css';
@@ -45,6 +56,30 @@ function BusinessPage() {
         setIsShown(current => !current);
     };
 
+    const getRatingImg = (rating) => {
+        if (!rating) {
+          return zeroStars;
+        } else if (rating > 0 && rating <= 1) {
+          return oneStars;
+        } else if (rating > 1 && rating <= 1.5) {
+          return oneandOneHalfStars;
+        } else if (rating > 1.5 && rating <= 2) {
+          return twoStars;
+        } else if (rating > 2 && rating <= 2.5) {
+          return twoandOneHalfStars;
+        } else if (rating > 2.5 && rating <= 3) {
+          return threeStars;
+        } else if (rating > 3 && rating <= 3.5) {
+          return threeandOneHalfStars;
+        } else if (rating > 3.5 && rating <= 4) {
+          return fourStars;
+        } else if (rating > 4 && rating <= 4.5) {
+          return fourandOneHalfStars;
+        } else if (rating > 4.5 && rating <= 5) {
+          return fiveStars;
+        }
+      };
+
     useEffect(() => {
         dispatch(getReviewsThunk(business.id))
         dispatch(getAllBusinessThunk())
@@ -58,7 +93,10 @@ function BusinessPage() {
                     <div className="name-rating-container">
                         <h5 className="business-name-page"> {business.name} </h5>
                         <div className='rating-container'>
-                            <h2 className='rating'>{rating}<img width='15' src='https://www.seekpng.com/png/detail/77-776747_star-mario-star-png.png' /></h2>
+                        <img
+							className="biz-star-rating"
+							src={getRatingImg(rating)}
+							/>
                             <h2 className='reviews'>{reviews.length} reviews</h2>
                         </div>
                     </div>
