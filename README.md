@@ -33,6 +33,4 @@ Clone Ylp into your desired directory:
 ![chrome_3n1Y8tk3lg](https://github.com/Christian-AC/Ylp/assets/92351444/197112fd-f2a5-490d-9de7-2214e78b00a6)
 
 # Business Page
-![chrome_VRsW1Kipps](https://user-images.githubusercontent.com/92351444/184213486-f1f4a318-88ab-4a38-bf09-94d142a4b4a5.png)
-
-
+![chrome_VdjN01J1mB](https://github.com/Christian-AC/Ylp/assets/92351444/5fe0bad8-f58c-4b09-959d-5a230c123a37)
