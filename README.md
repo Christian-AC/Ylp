@@ -1,5 +1,5 @@
 # Welcome to YLP a yelp clone
-Ylp was builts as a clone of yelp. With Ylp you can add your own businesses or review other business that you may have visted.
+YLP is a Yelp-inspired web application, demonstrating HTML5, CSS3, Python, JavaScript, React/Redux, Flask, and SQLAlchemy/Postgres. This project delivers a feature experience with CRUD operations, PostgreSQL for data storage, Flask for the backend, and React for the frontend, resulting in a robust user interface. It features interactive React modals for a seamless user experience and incorporates Google Maps API for real-time location visualization, enhancing user engagement.
 
 # Technologies Used
 * Frontend: React
