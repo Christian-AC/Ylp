@@ -6,7 +6,6 @@
     margin-left: 20%;
     width: 60%;
     border-radius: 5%;
-    height: 8000px;
 }
 
 
@@ -96,6 +95,19 @@
     font-size: 13px;
 }
 
+.Amenities-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px;
+}
+
+.Amenities{
+    font-weight: lighter;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+
 .hours{
     border-top: 1px solid rgb(198, 198, 198);
 }
@@ -130,12 +142,17 @@
 .business-page-right{
     width: auto;
     height: min-content;
-    margin-left: 32%;
+    /* margin-left: 32%; */
     padding: 2px;
     border: 1px solid rgb(198, 198, 198);
-    position:fixed;
+
 }
 
 .info{
     border-top: 1px solid rgb(198, 198, 198);
+}
+
+
+.bottom-container-business{
+    height: 100px;
 }

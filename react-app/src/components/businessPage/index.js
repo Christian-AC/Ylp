@@ -139,12 +139,14 @@ function BusinessPage() {
                             <div className='amenities'>
                                 <h2 className='titles'>Amenities and More</h2>
                                 <div className='Amenities-container'>
-                                    <h3> <AiOutlineCheck /> Accepts Credit Cards</h3>
-                                    <h3> <AiOutlineCheck /> Accepts Apple Pay</h3>
-                                    <h3> <AiOutlineCheck /> Staff wears Masks</h3>
-                                    <h3> <AiOutlineCheck />  Wifi</h3>
-                                    <h3> <AiOutlineCheck /> Moderate Noise</h3>
-                                    <h3> <AiOutlineCheck /> Good for Groups</h3>
+                                    <ul className="Amenities-list">
+                                        <li className='Amenities'> <AiOutlineCheck /> Accepts Credit Cards</li>
+                                        <li className='Amenities'> <AiOutlineCheck /> Accepts Apple Pay</li>
+                                        <li className='Amenities'> <AiOutlineCheck /> Staff wears Masks</li>
+                                        <li className='Amenities'> <AiOutlineCheck />  Wifi</li>
+                                        <li className='Amenities'> <AiOutlineCheck /> Moderate Noise</li>
+                                        <li className='Amenities'> <AiOutlineCheck /> Good for Groups</li>
+                                    </ul>
                                 </div>
                             </div>
                             <BusinessReviews business={business} />
@@ -166,6 +168,7 @@ function BusinessPage() {
                         </div>
                     </div>
                 </div>
+                <div className="bottom-container-business"></div>
             </div>
         </>
         )
