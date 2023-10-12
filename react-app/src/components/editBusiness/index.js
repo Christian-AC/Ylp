@@ -41,8 +41,8 @@ function EditBusiness({ business, setShowModal }) {
     } else if (name.length < 4 || name.length > 20) {
       errorsObj.name = "Name must be longer than 4 characters and shorter than 20";
       error = true;
-    } else if (address.length < 4 || address.length > 25) {
-      errorsObj.address = "Address must be longer than 4 characters and shorter than 25";
+    } else if (address.length < 4 || address.length > 40) {
+      errorsObj.address = "Address must be longer than 4 characters and shorter than 40";
       error = true;
     } else if (phone_number === '') {
       errorsObj.phone_number = "Phone # is required"
@@ -88,36 +88,26 @@ function EditBusiness({ business, setShowModal }) {
 
   return (
     <>
-      <h2>Edit your business!</h2>
-      <form className='business-form' onSubmit={handleSubmit}>
+    <div className='login-form-container'>
+      <h2 className='loginform-text-intro'>Edit your business!</h2>
+      <form className="loginform-form" onSubmit={handleSubmit}>
         {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
-        <div>
-          <label>Name</label>
-          <input className='name-form' type='text' value={name} placeholder='Business name' onChange={updateName} required />
-        </div>
-        <div>
-          <label>Address</label>
-          <input className='address-form' type='text' value={address} placeholder='address' onChange={updateAddress} required />
-        </div>
-        <div>
-          <label>Zip Code</label>
-          <input className='state-form' type='text' value={zipCode} placeholder='Zip Code' onChange={updateZipcode} required />
-        </div>
-        <div>
-          <label>Phone #</label>
-          <input className='phone-form' type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber} required />
-        </div>
-        <div>
-          <label>Website</label>
-          <input className='website-form' type='text' value={website} placeholder='website' onChange={updateWebsite} required />
-        </div>
-        <div>
-          <label>Logo Image</label>
-          <input className='logo-form' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required />
-        </div>
-        <button className="Create-Business" type="submit">Post</button>
-        <button className="Create-Business" onClick={(e) => handleDeleteClick(e)}>Delete</button>
+          <input className='loginform-inputs' type='text' value={name} placeholder='Business name' onChange={updateName} required />
+
+          <input className='loginform-inputs' type='text' value={address} placeholder='address' onChange={updateAddress} required />
+
+          <input className='loginform-inputs' type='text' value={zipCode} placeholder='Zip Code' onChange={updateZipcode} required />
+
+          <input className='loginform-inputs' type='text' value={phone_number} placeholder='phone number' onChange={updatePhoneNumber} required />
+
+          <input className='loginform-inputs' type='text' value={website} placeholder='website' onChange={updateWebsite} required />
+
+          <input className='loginform-inputs' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required />
+
+        <button className="signup-bottons" type="submit">Post</button>
+        <button className="signup-bottons" onClick={(e) => handleDeleteClick(e)}>Delete</button>
       </form>
+    </div>
     </>
   )
 }
