@@ -9,3 +9,7 @@ button:hover {
     background-color: white;
     color: red;
   }
+
+body {
+  margin-left: -5px
+}

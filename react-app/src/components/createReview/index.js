@@ -49,22 +49,21 @@ function CreateReview({business, setShowModal}) {
     return (
 
     <div className="review-form">
-        <h1>Write a Review</h1>
+        <h2 className='loginform-text-intro'>Write a Review</h2>
             {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
         <form onSubmit={handleSubmit}>
-                <div className="review-form-line">
-                    <label className="review-label">Review</label>
-                    <textarea rows="10" cols="50" className='review-textarea' value={content} placeHolder="content" onChange={updateContent} required/>
-                </div>
                 <div className="rating-form-line">
                     <label className="rating-label">Rating</label>
                     <select className='review-select'  type='text' value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
-                        <option value="1">1/5</option>
-                        <option value="2">2/5</option>
-                        <option value="3">3/5</option>
-                        <option value="4">4/5</option>
-                        <option value="5">5/5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
+                </div>
+                <div className="review-form-line">
+                    <textarea rows="10" cols="50" className='review-textarea' value={content} placeHolder="Review" onChange={updateContent} required/>
                 </div>
                 <button className="Create-review" type="submit">Submit</button>
         </form>
