@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { createReviewThunk, getReviewsThunk} from '../../store/review';
+import {FaStar} from 'react-icons/fa'
 import './createReview.css'
 
 function CreateReview({business, setShowModal}) {
@@ -14,11 +15,11 @@ function CreateReview({business, setShowModal}) {
     const [userId] = useState((user.id));
     const [businessId] = useState((business.id));
     const [content, setContent] = useState("");
-    const [rating, setRating] = useState(5);
+    const [rating, setRating] = useState(null);
     const [errors, setErrors] = useState(errorsObj);
+    const [hover, setHover] =useState(null)
 
     const updateContent = (e) => setContent(e.target.value);
-    // const updateRating = (e) => setRating(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -51,16 +52,31 @@ function CreateReview({business, setShowModal}) {
     <div className="review-form">
         <h2 className='loginform-text-intro'>Write a Review</h2>
             {Object.values(errors).map((error, idx) => <li key={idx}>{error}</li>)}
+            <div>
+            {[...Array(5)].map((star, index) => {
+                const currentRating = index + 1;
+            return(
+                <label>
+                    <input
+                        type='radio'
+                        name='rating'
+                        value={currentRating}
+                        onClick={() => setRating(currentRating)}
+                        />
+                        <FaStar
+                            clssName='star'
+                            size={50}
+                            color={currentRating <=  (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                            onMouseEnter={() => setHover(currentRating)}
+                            onMouseLeave={() => setHover(null)}
+                            />
+                </label>
+            )
+
+            })}
+            </div>
         <form onSubmit={handleSubmit}>
                 <div className="rating-form-line">
-                    <label className="rating-label">Rating</label>
-                    <select className='review-select'  type='text' value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
                 </div>
                 <div className="review-form-line">
                     <textarea rows="10" cols="50" className='review-textarea' value={content} placeHolder="Review" onChange={updateContent} required/>
