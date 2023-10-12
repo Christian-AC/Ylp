@@ -33,7 +33,6 @@
     flex-direction: column;
 }
 
-
 .rating-container{
     display: flex;
     flex-direction: row;
@@ -45,20 +44,14 @@
     padding-left: 30px;
 }
 
-.business-page-bottom{
+/* Left side and main side */
+
+.business-page-left{
     display: flex;
     flex-direction: row;
     width: 80%;
     justify-content: space-between;
     padding-left: 30px;
-}
-
-.info-container{
-    width: 250px;
-    height: min-content;
-    margin-left: 90px;
-    padding: 2px;
-    border: 1px solid rgb(198, 198, 198);
 }
 
 .amenities{
@@ -88,12 +81,17 @@
     margin-right: 10px;
 }
 
-.info{
+.hours{
     border-top: 1px solid rgb(198, 198, 198);
 }
 
-.hours{
-    border-top: 1px solid rgb(198, 198, 198);
+.time{
+    font-size: 10px;
+}
+
+.time-container{
+    width: 250px;
+    height: 150px;
 }
 
 .google-map{
@@ -110,4 +108,18 @@
 
 .titles{
     font-size: 25px;
+}
+
+/* Right side of Page */
+
+.business-page-right{
+    width: 250px;
+    height: min-content;
+    margin-left: 90px;
+    padding: 2px;
+    border: 1px solid rgb(198, 198, 198);
+}
+
+.info{
+    border-top: 1px solid rgb(198, 198, 198);
 }

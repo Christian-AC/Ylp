@@ -75,7 +75,7 @@ function BusinessPage() {
                                 </div>
                             ) : null}
                         </div>
-                        <div className="business-page-bottom">
+                        <div className="business-page-left">
                             <div>
                                 <div className='hours'>
                                     <h2 className='titles'>Location and Hours</h2>
@@ -88,14 +88,14 @@ function BusinessPage() {
                                             src={`https://www.google.com/maps/embed/v1/place?key=${key}
                                             &q=${business["address"]},${business["city"]}+${business["state"]}`}
                                         ></iframe>
-                                        <div className='hour-container'>
-                                            <h3> Mon 11:00 AM - 9:00 PM</h3>
-                                            <h3> Tues 11:00 AM - 9:00 PM</h3>
-                                            <h3> Wed 11:00 AM - 9:00 PM</h3>
-                                            <h3> Thur 11:00 AM - 9:00 PM</h3>
-                                            <h3> Fri 11:00 AM - 9:00 PM</h3>
-                                            <h3> Sat 11:00 AM - 9:00 PM </h3>
-                                            <h3> Sun 11:00 AM - 9:00 PM</h3>
+                                        <div className='time-container'>
+                                            <h3 className='time'> Mon 11:00 AM - 9:00 PM</h3>
+                                            <h3 className='time'> Tues 11:00 AM - 9:00 PM</h3>
+                                            <h3 className='time'> Wed 11:00 AM - 9:00 PM</h3>
+                                            <h3 className='time'> Thur 11:00 AM - 9:00 PM</h3>
+                                            <h3 className='time'> Fri 11:00 AM - 9:00 PM</h3>
+                                            <h3 className='time'> Sat 11:00 AM - 9:00 PM </h3>
+                                            <h3 className='time'> Sun 11:00 AM - 9:00 PM</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ function BusinessPage() {
                                 </div>
                                 <BusinessReviews business={business} />
                             </div>
-                            <div className="info-container">
+                            <div className="business-page-right">
                                 <h1>More Info</h1>
                                 <div className="info">
                                     <h2>Address</h2>
