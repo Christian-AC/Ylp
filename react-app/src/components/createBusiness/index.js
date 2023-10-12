@@ -80,39 +80,34 @@ function CreateBusiness({setShowModal}) {
       }
     }
 
-      return (<>
-      <div>
-      </div>
-            <h2 className='create-title'>Add your business!</h2>
-        <form className='business-form' onSubmit={handleSubmit}>
-          {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
-          <div className='create-div'>
-            <label className='create-label'>Name</label>
-            <input className='input-form' type='text' value={name} placeholder='Business name' onChange={updateName} required/>
+      return (
+        <>
+          <div className='login-form-container'>
+          <h2 className='loginform-text-intro'>Add your business!</h2>
+          <form className="loginform-form" onSubmit={handleSubmit}>
+            {Object.values(errors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={name} placeholder='Business name' onChange={updateName} required />
+            </div>
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={address} placeholder='Address' onChange={updateAddress} required />
+            </div>
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={zipCode} placeholder='Zip Code' onChange={updateZipcode} required />
+            </div>
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={phone_number} placeholder='Phone #' onChange={updatePhoneNumber} required />
+            </div>
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={website} placeholder='URL' onChange={updateWebsite} required />
+            </div>
+            <div className='create-div'>
+              <input className='loginform-inputs' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required />
+            </div>
+            <button className="signup-bottons" type="submit">Post</button>
+          </form>
           </div>
-          <div className='create-div'>
-            <label className='create-label'>Address</label>
-            <input className='input-form' type='text' value={address} placeholder='Address' onChange={updateAddress} required/>
-          </div>
-          <div className='create-div'>
-            <label className='create-label'>Zip Code</label>
-            <input className='input-form' type='text' value={zipCode} placeholder='Zip Code' onChange={updateZipcode} required/>
-          </div>
-          <div className='create-div'>
-            <label className='create-label'>Phone #</label>
-            <input className = 'input-form' type='text' value={phone_number} placeholder='Phone #' onChange={updatePhoneNumber} required/>
-          </div>
-          <div className='create-div'>
-            <label className='create-label'>Website</label>
-            <input className = 'input-form' type='text' value={website} placeholder='URL' onChange={updateWebsite} required/>
-          </div>
-          <div className='create-div'>
-            <label className='create-label'>Logo Image</label>
-            <input className = 'input-form' type='text' value={imageURL} placeholder='Logo Image URL' onChange={updateImageURL} required/>
-          </div>
-            <button className="Create-Business" type="submit">Post</button>
-        </form>
-      </>
+        </>
 
       )
 }

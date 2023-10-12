@@ -8,7 +8,7 @@ function CreateReviewModal({business}) {
 
     return (
       <>
-        <button className="loginbutton" onClick={() => setShowModal(true)}>Write a review!</button>
+        <button className="signup-bottons" onClick={() => setShowModal(true)}>Write a review!</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
             <CreateReview business={business} setShowModal={setShowModal}/>

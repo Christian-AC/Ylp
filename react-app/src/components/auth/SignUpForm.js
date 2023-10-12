@@ -81,63 +81,62 @@ const SignUpForm = ({setShowModal}) => {
   }
 
   return (
-    <form className="signupform" onSubmit={onSignUp}>
-      {Object.values(reactErrors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
-      <div>
-        {errors.map((error, ind) => (
-          <div className='errors' key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label>User Name</label>
-        <input
-          className='username-input'
-          type='text'
-          name='username'
-          placeholder='username'
-          onChange={updateUsername}
-          value={username}
-          required={true}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          className='email-input'
-          type='text'
-          name='email'
-          placeholder='email'
-          onChange={updateEmail}
-          value={email}
-          required={true}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          className='password-input'
-          type='password'
-          name='password'
-          placeholder='password'
-          onChange={updatePassword}
-          value={password}
-          required={true}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
-          className='repeat-password-input'
-          type='password'
-          name='repeat_password'
-          placeholder='password'
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <button type='submit' className="loginbutton">Sign Up</button>
-    </form>
+    <div className='login-form-container'>
+      <h2 className='loginform-text-intro'>Sign up for YLP</h2>
+      <form className="loginform-form" onSubmit={onSignUp}>
+        {Object.values(reactErrors).map((error, idx) => <li className='errors' key={idx}>{error}</li>)}
+        <div>
+          {errors.map((error, ind) => (
+            <div className='errors' key={ind}>{error}</div>
+          ))}
+        </div>
+        <div>
+          <input
+            className='loginform-inputs'
+            type='text'
+            name='username'
+            placeholder='Username'
+            onChange={updateUsername}
+            value={username}
+            required={true}
+          ></input>
+        </div>
+        <div>
+          <input
+            className='loginform-inputs'
+            type='email'
+            name='email'
+            placeholder='Email'
+            onChange={updateEmail}
+            value={email}
+            required={true}
+          ></input>
+        </div>
+        <div>
+          <input
+            className='loginform-inputs'
+            type='password'
+            name='password'
+            placeholder='Password'
+            onChange={updatePassword}
+            value={password}
+            required={true}
+          ></input>
+        </div>
+        <div>
+          <input
+            className='loginform-inputs'
+            type='password'
+            name='repeat_password'
+            placeholder='Repeat Password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+          ></input>
+        </div>
+        <button type='submit' className="signup-botton">Sign Up</button>
+      </form>
+    </div>
   );
 };
 
