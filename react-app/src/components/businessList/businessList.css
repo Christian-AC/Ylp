@@ -16,7 +16,8 @@
 .business-list-data {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: auto;
+    height: auto;
     padding-left: 30px;
     /* align-items: flex-start; */
 }
@@ -58,13 +59,16 @@
 }
 
 
-/* .star-component{
-    display: flex;
-    flex-direction: row;
-    height: 15px;
-} */
 
 .business-name {
-    font-size: 20px;
+    font-size: 1.4vw;
 }
 
+.star-banner {
+    width: 150px;
+	height: auto;
+}
+
+.address {
+    margin-bottom: 20px;
+}

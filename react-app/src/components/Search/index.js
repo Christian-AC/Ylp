@@ -36,20 +36,15 @@ function SearchPage() {
                     {searchBusinesses.map((business) =>{
                         return(
                             <NavLink className='link' to={`/business/${business.id}`}>
-                                <div className='business-list' >
-                                    <img alt='business-logo-list' src={business.imageURL} className='business-logo-list'/>
-                                    <div className='business-list-data'>
-                                        <div className='name-and-stars'>
-                                            <h2 className='business-name'> {business.name} </h2>
-                                            <StarComponet business={business}/>
-                                        </div>
-                                        <div className='business-list-bottom'>
-                                            <h2> <AiFillPhone/> {formatPhone(business.phone_number)} </h2>
-                                            <h2> <FaDirections/> {business.address} {business.city}, {business.state} </h2>
-                                        </div>
-                                    </div>
+                            <div className='business-list' >
+                                <img alt='business-logo-list' src={business.imageURL} className='business-logo-list' />
+                                <div className='business-list-data'>
+                                    <h2 className='business-name'> {business.name} </h2>
+                                    <h2 className="address"> {business.address} </h2>
+                                    <StarComponet business={business} />
                                 </div>
-                            </NavLink>
+                            </div>
+                        </NavLink>
                         )
                     })}
                     </>

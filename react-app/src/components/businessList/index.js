@@ -28,27 +28,26 @@ function BusinessList() {
 
     return (
         <>
-        <h1 className='business-list-header'>Your Next Review Awaits</h1>
+            <h1 className='business-list-header'>Your Next Review Awaits</h1>
             <div className="business-list-container" >
-                    <>
-                    {businesses.map((business) =>{
-                        return(
+                <>
+                    {businesses.map((business) => {
+                        return (
                             <NavLink className='link' to={`/business/${business.id}`}>
                                 <div className='business-list' >
-                                    <img alt='business-logo-list' src={business.imageURL} className='business-logo-list'/>
+                                    <img alt='business-logo-list' src={business.imageURL} className='business-logo-list' />
                                     <div className='business-list-data'>
-                                        <div className='name-and-stars'>
-                                            <h2 className='business-name'> {business.name} </h2>
-                                            <StarComponet business={business}/>
-                                        </div>
+                                        <h2 className='business-name'> {business.name} </h2>
+                                        <h2 className="address"> {business.address} </h2>
+                                        <StarComponet business={business} />
                                     </div>
                                 </div>
                             </NavLink>
                         )
                     })}
-                    </>
+                </>
             </div>
         </>
-        )
+    )
 }
 export default BusinessList;

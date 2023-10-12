@@ -33,17 +33,24 @@
 .name-rating-container{
     display: flex;
     flex-direction: column;
+
 }
 
 .rating-container{
     display: flex;
     flex-direction: row;
+    width: auto;
 
 }
 .business-buttons{
     display: flex;
     flex-direction: row;
     padding-left: 30px;
+}
+
+.star-rating-page{
+    width:180px;
+    height: auto;
 }
 
 /* bottom of business page */
@@ -78,16 +85,15 @@
     margin-right: 10px;
 }
 
-.reviews{
+.reviews2{
     margin-top: 22px;
     font-size: 13px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .reviews-star{
     margin-top: 27px;
     font-size: 13px;
-    margin-right: 10px;
 }
 
 .hours{

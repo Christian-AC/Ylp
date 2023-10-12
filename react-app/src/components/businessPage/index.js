@@ -94,10 +94,10 @@ function BusinessPage() {
                         <h5 className="business-name-page"> {business.name} </h5>
                         <div className='rating-container'>
                         <img
-							className="biz-star-rating"
+							className="star-rating-page"
 							src={getRatingImg(rating)}
 							/>
-                            <h2 className='reviews'>{reviews.length} reviews</h2>
+                            <h2 className='reviews2'>{reviews.length} reviews</h2>
                         </div>
                     </div>
                 </div>

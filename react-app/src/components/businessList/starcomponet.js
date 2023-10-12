@@ -66,7 +66,7 @@ function StarComponet({business}) {
         <>
 
             <img
-                className="biz-star-rating"
+                className="star-banner"
                 src={getRatingImg(rating)}
             />
 

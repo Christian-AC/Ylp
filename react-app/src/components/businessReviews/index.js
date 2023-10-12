@@ -28,7 +28,6 @@ function BusinessReviews({business}) {
     const reviews = useSelector((state) => Object.values(state.review).filter(review => review.businessId === businessId))
     const sortedReviews = reviews.sort().reverse()
 
-    const [hover, setHover] =useState(null)
 
     let rating = 0;
     const ratings = reviews.map((review) => review.rating);
@@ -36,6 +35,28 @@ function BusinessReviews({business}) {
       ratings?.forEach((rate) => (rating = rate + rating));
       rating = (rating / ratings.length).toFixed(1);
     }
+
+    function addHours(numOfHours, date = new Date()) {
+      date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
+
+      return date;
+    }
+    const convertDate = (createdAt) => {
+      const d = new Date(createdAt);
+      const addtime = addHours(0, d);
+      const now = Date.now();
+
+      const hourDiff = Math.floor((now - addtime) / 1000 / 60 / 60);
+      if (hourDiff < 1) {
+        return Math.floor((now - addtime) / 1000 / 60) + " mins ago";
+      }
+      if (hourDiff < 24) {
+        return Math.floor((now - addtime) / 1000 / 60 / 60) + " hrs ago";
+      }
+      if (hourDiff >= 24) {
+        return Math.floor((now - addtime) / 1000 / 60 / 60 / 24) + " days ago";
+      }
+    };
 
     const getRatingImg = (rating) => {
       if (!rating) {
@@ -67,20 +88,25 @@ function BusinessReviews({business}) {
 
   return (
     <div className="review-container">
-      <h1 className='titles'>Reviews</h1>
+      <h1 className='review-title'>Reviews</h1>
       {sortedReviews.map((review) => {
         return (
           <>
             <div className="single-review">
-              <h1>{review.reviewer}</h1>
-              <img
-							className="biz-star-rating"
-							src={getRatingImg(review.rating)}
-							/>
-              {review.user.id === user.id ? (
-                <EditReviewModal business={business} review={review} />) : null}
+              <div className="review-top">
+                <h1 className="reviewer">{review.reviewer}</h1>
+                {review.user.id === user.id ? (
+                  <EditReviewModal business={business} review={review} />) : null}
+              </div>
+              <div className="rating-time-container">
+                <img
+                  className="star-review-page"
+                  src={getRatingImg(review.rating)}
+                />
+                <h2 className="rating-time">{convertDate(review.created_at)}</h2>
+              </div>
+              <h3 className="content">{review.content}</h3>
             </div>
-            <h3>{review.content}</h3>
           </>
         )
       })}
