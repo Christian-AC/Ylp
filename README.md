@@ -27,10 +27,10 @@ Clone Ylp into your desired directory:
 [USER STORIES](https://github.com/Christian-AC/Ylp/wiki/User-Stories)
 
 # Splash Page!
-![firefox_2ANhYVjUB3](https://github.com/Christian-AC/Ylp/assets/92351444/275b15fe-31a9-4adc-8e7d-c54dc1db240d)
+![chrome_BCbVLGx3qZ](https://github.com/Christian-AC/Ylp/assets/92351444/75688663-5814-4e90-b042-ac253410f13e)
 
 # Login
 ![chrome_3n1Y8tk3lg](https://github.com/Christian-AC/Ylp/assets/92351444/197112fd-f2a5-490d-9de7-2214e78b00a6)
 
 # Business Page
-![chrome_VdjN01J1mB](https://github.com/Christian-AC/Ylp/assets/92351444/5fe0bad8-f58c-4b09-959d-5a230c123a37)
+![chrome_kboErZugYI](https://github.com/Christian-AC/Ylp/assets/92351444/c0b2197c-90dc-48c1-bd60-90b86ea419f8)
