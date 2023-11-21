@@ -1,4 +1,3 @@
-require("dotenv").config();
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
@@ -20,7 +19,7 @@ import twoandOneHalfStars from "../assets/2.5-stars.png";
 import threeandOneHalfStars from "../assets/3.5-stars.png";
 import fourandOneHalfStars from "../assets/4.5-stars.png";
 import './businessPage.css';
-
+require("dotenv").config();
 
 function BusinessPage() {
     const dispatch = useDispatch();
