@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
@@ -18,9 +19,6 @@ import oneandOneHalfStars from "../assets/1.5-stars.png";
 import twoandOneHalfStars from "../assets/2.5-stars.png";
 import threeandOneHalfStars from "../assets/3.5-stars.png";
 import fourandOneHalfStars from "../assets/4.5-stars.png";
-
-
-
 import './businessPage.css';
 
 
@@ -37,7 +35,7 @@ function BusinessPage() {
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
     const businessId = business.id;
     const userId = user.id
-    const key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
+    // const key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
 
     const formatPhone = (number) => {
         return number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
@@ -122,7 +120,7 @@ function BusinessPage() {
                                         loading="lazy"
                                         className="google-map"
                                         title="location-map"
-                                        src={`https://www.google.com/maps/embed/v1/place?key=${key}
+                                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_KEY}
                                                 &q=${business["address"]},${business["city"]}+${business["state"]}`}
                                     ></iframe>
                                     <div className='time-container'>
