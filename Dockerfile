@@ -9,6 +9,7 @@ FROM python:3.9
 ENV REACT_APP_BASE_URL=https://ylp-clone.herokuapp.com/
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
+ENV GOOGLE_KEY=AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s
 ENV SQLALCHEMY_ECHO=True
 # Set the directory for upcoming commands to /var/www
 WORKDIR /var/www
