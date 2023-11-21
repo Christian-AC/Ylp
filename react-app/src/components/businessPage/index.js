@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
@@ -34,7 +35,7 @@ function BusinessPage() {
     const business = useSelector((state) => Object.values(state.business).find((business) => business?.id === num))
     const businessId = business.id;
     const userId = user.id
-    // const key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
+    const key = 'AIzaSyCjY8yqiwTQ8cfdnduC2iB5WtlDEswe56s'
 
     const formatPhone = (number) => {
         return number.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
@@ -119,7 +120,7 @@ function BusinessPage() {
                                         loading="lazy"
                                         className="google-map"
                                         title="location-map"
-                                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_KEY}
+                                        src={`https://www.google.com/maps/embed/v1/place?key=${key}
                                                 &q=${business["address"]},${business["city"]}+${business["state"]}`}
                                     ></iframe>
                                     <div className='time-container'>
