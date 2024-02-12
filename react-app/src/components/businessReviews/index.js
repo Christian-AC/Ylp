@@ -4,7 +4,6 @@ import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getReviewsThunk } from "../../store/review";
 import  EditReviewModal  from "../editReview/editReviewModal"
 import './businessReviews.css'
-import {FaStar} from 'react-icons/fa'
 import zeroStars from "../assets/0-stars.png";
 import oneStars from "../assets/1-stars.png";
 import twoStars from "../assets/2-stars.png";

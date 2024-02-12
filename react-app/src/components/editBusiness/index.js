@@ -3,7 +3,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllBusinessThunk, updateBusinessThunk, deleteBusinessThunk } from "../../store/business";
 import EditBusinessModal from "./editBusinessModal";
-// import './editBusiness.css'
 
 
 function EditBusiness({ business, setShowModal }) {
@@ -20,7 +19,7 @@ function EditBusiness({ business, setShowModal }) {
   const [phone_number, setPhoneNumber] = useState(business.phone_number);
   const [website, setWebsite] = useState(business.website);
   const [imageURL, setimageURL] = useState(business.imageURL);
-  console.log('-------------', business.imageURL)
+  // console.log('-------------', business.imageURL)
 
   const [errors, setErrors] = useState(errorsObj);
 

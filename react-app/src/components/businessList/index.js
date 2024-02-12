@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
-import {AiFillPhone} from "react-icons/ai"
-import {FaDirections} from "react-icons/fa"
 import StarComponet from "./starcomponet";
 import './businessList.css'
 

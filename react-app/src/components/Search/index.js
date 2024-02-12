@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import { getAllBusinessThunk } from '../../store/business';
-import {AiFillPhone} from "react-icons/ai"
-import {FaDirections} from "react-icons/fa"
 import StarComponet from "../businessList/starcomponet";
 
 
@@ -19,7 +17,6 @@ function SearchPage() {
     const user = useSelector((state) => state.session.user)
     const businesses = useSelector((state) => Object.values(state.business))
     const searchBusinesses = businesses?.filter((business) => business.name.toUpperCase().includes(searchValue.toUpperCase()))
-    // console.log("-----", searchRestaurantsArray)
     useEffect(() => {
         dispatch(getAllBusinessThunk())
     }, [dispatch])

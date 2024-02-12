@@ -8,7 +8,6 @@ import { getReviewsThunk } from "../../store/review";
 import EditBusinessModal from '../editBusiness/editBusinessModal'
 import BusinessReviews from "../businessReviews";
 import CreateReviewModal from "../createReview/CreateReviewModal";
-import MapPageA from "../googleMap";
 import zeroStars from "../assets/0-stars.png";
 import oneStars from "../assets/1-stars.png";
 import twoStars from "../assets/2-stars.png";
